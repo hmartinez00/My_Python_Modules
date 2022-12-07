@@ -1,0 +1,10 @@
+setup.py
+TradingPackage/Bbinance.py
+TradingPackage/Indicators.py
+TradingPackage/Special_Indicators.py
+TradingPackage/__init__.py
+TradingPackage/strategies.py
+TradingPackage.egg-info/PKG-INFO
+TradingPackage.egg-info/SOURCES.txt
+TradingPackage.egg-info/dependency_links.txt
+TradingPackage.egg-info/top_level.txt
