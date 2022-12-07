@@ -2,8 +2,8 @@ from datetime import datetime as dt
 import time
 
 from matplotlib import colors
-from utils.Bbinance import Binancebot as info
-from utils.Indicators import Indicators as ind
+from TradingPackage.Bbinance import Binancebot as info
+from TradingPackage.Indicators import Indicators as ind
 import matplotlib.pyplot as plt
 import mplfinance as mpf
 from market_profile import MarketProfile

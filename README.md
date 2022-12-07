@@ -6,11 +6,11 @@ Contiene modulo para el manejo de objetos de la Api de Binance, modulo para gest
 
 
 
-Pasos de intalacion:
+Pasos de intalacion o actualizacion desde PC-2:
 $ cd ~/dist
 $ pip install TradingPackage-0.1.tar.gz
 
-Pasos para consolidar actualizacion:
+Pasos para creacion o actualizacion desde PC-1:
 <!-- Directorio donde se encuentra el setup.py -->
 $ cd [directorio-raiz-del-proyecto]
 $ python setup.py sdist

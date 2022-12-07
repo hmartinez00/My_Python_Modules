@@ -9,7 +9,7 @@ from datetime import datetime as dt
 
 class Binancebot:
 
-    ruta_archivo_json = 'utils/settings.json'
+    ruta_archivo_json = 'settings.json'
     with open(ruta_archivo_json) as archivo_json:
         datos_json = json.load(archivo_json)
 
