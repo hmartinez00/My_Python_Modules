@@ -1,0 +1,8 @@
+README.md
+setup.py
+ManageDB/__init__.py
+ManageDB/on_db.py
+ManageDB.egg-info/PKG-INFO
+ManageDB.egg-info/SOURCES.txt
+ManageDB.egg-info/dependency_links.txt
+ManageDB.egg-info/top_level.txt
