@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-
+# --------------------------------------------
 def project_route(__dir_dist, __project):
     try:
         __libs = os.listdir(__dir_dist)
@@ -11,9 +11,13 @@ def project_route(__dir_dist, __project):
     except:
         return None
 
+# --------------------------------------------
 
 project = input('Introduzca el nombre del proyecto a crear/actualizar: ')
 dir_dist = 'dist'
+
+
+# --------------------------------------------
 
 tar_poject = project_route(dir_dist, project)
 
@@ -30,3 +34,5 @@ if tar_poject != None:
 
 else:
     print('El paquete no fue encontrado!')
+
+# --------------------------------------------
