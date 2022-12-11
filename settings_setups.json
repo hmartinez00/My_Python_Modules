@@ -1,0 +1,52 @@
+{
+    "General_Utilities":
+    {
+        "name":"General_Utilities",
+        "version":"0.1",
+        "description":"Subrutinas generales.",
+        "author":"Hector Martinez",
+        "author_email":"hectoralonzomartinez00@gmail.com",
+        "url":"",
+        "packages":["General_Utilities"]
+    },
+    "ManageDB":
+    {
+        "name":"ManageDB",
+        "version":"0.1",
+        "description":"Herramientas para gestion de Bases de Datos SQL.",
+        "author":"Hector Martinez",
+        "author_email":"hectoralonzomartinez00@gmail.com",
+        "url":"",
+        "packages":["ManageDB"]
+    },
+    "MessagesKit":
+    {    
+        "name":"MessagesKit",
+        "version":"0.1",
+        "description":"Utilidades para mensajeria.",
+        "author":"Hector Martinez",
+        "author_email":"hectoralonzomartinez00@gmail.com",
+        "url":"",
+        "packages":["MessagesKit"]
+    },
+    "TradingPackage":
+    {
+        "name":"TradingPackage",
+        "version":"0.1",
+        "description":"Contiene modules para la gestion de objetos de la Api de Binance, modulos para gestion de indicadores, y modulos para gestion de estrategias.",
+        "author":"Hector Martinez",
+        "author_email":"hectoralonzomartinez00@gmail.com",
+        "url":"",
+        "packages":["TradingPackage"]
+    },
+    "VRSS-2_Generate":
+    {
+        "name":"VRSS-2_Generate",
+        "version":"0.1",
+        "description":"Utilidades para generacion de archivos de planes de misiones satelitales VRSS para el Subsistema de Gestion y Operaciones ABAE.",
+        "author":"Hector Martinez",
+        "author_email":"hectoralonzomartinez00@gmail.com",
+        "url":"",
+        "packages":["VRSS-2_Generate"]
+    }
+}
