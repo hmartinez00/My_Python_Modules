@@ -1,7 +1,11 @@
+import subprocess
+
+subprocess.run('clear')
+
 opciones=[
 	'Generar Setup',
-	'Crear Proyecto',
-	'Actualizar Proyecto',
+	'Crear/Actualizar Proyecto',
+	'Salir',
 ]
 
 Lista_opciones=''

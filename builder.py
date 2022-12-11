@@ -1,5 +1,6 @@
 import os
 import subprocess
+from General_Utilities.cntrl_exit import salida
 
 # --------------------------------------------
 def project_route(__dir_dist, __project):
@@ -13,20 +14,19 @@ def project_route(__dir_dist, __project):
 
 # --------------------------------------------
 
-project = input('Introduzca el nombre del proyecto a crear/actualizar: ')
+project = input('Introduzca el nombre del proyecto: ')
 dir_dist = 'dist'
-
 
 # --------------------------------------------
 
-tar_poject = project_route(dir_dist, project)
+tar_project = project_route(dir_dist, project)
 
-if tar_poject != None:
+if tar_project != None:
 
     shell_order = [
         'clear',
         'python setup.py sdist',
-        'pip install ' + tar_poject,
+        'pip install ' + tar_project,
     ]
 
     for i in shell_order:
@@ -36,3 +36,5 @@ else:
     print('El paquete no fue encontrado!')
 
 # --------------------------------------------
+
+salida("builder")
