@@ -1,30 +1,21 @@
 import subprocess
+from General_Utilities.option_list import option_list
 
 subprocess.run('clear')
 
 opciones=[
 	'Generar Setup',
-	'Crear/Actualizar Proyecto',
+	'Actualizar Proyecto',
 	'Salir',
 ]
 
-Lista_opciones=''
-for i in range(len(opciones)):
-	Lista_opciones=Lista_opciones+\
-	'\t{}. '.format(i+1) + opciones[i] + '\n'
+opcion = option_list(opciones)
 
-str_menu='Acciones a Ejecutar: \n\n'+\
-Lista_opciones
-	
-print(str_menu, end='\r')
-
-opcion=input('\nSeleccione una opcion: ')
-
-if opcion=='1':
-	exec(open("setup_generator.py").read())
-elif opcion=='2':
-	exec(open("builder.py").read())
-elif opcion=='3':
+if opcion==opciones[0]:
+	exec(open("Package_update/setup_generator.py").read())
+elif opcion==opciones[1]:
+	exec(open("Package_update/builder.py").read())
+elif opcion==opciones[2]:
 	print('Adios!')
 else:
 	print('\nOpcion Invalida! Repita la eleccion.\n')
