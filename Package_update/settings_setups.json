@@ -56,7 +56,7 @@
     },
     "Pku_module": {
         "name": "Pku_module",
-        "version": "0.1",
+        "version": "0.2",
         "description": "Utilidades para actualizacion de modulos y paquetes.",
         "author": "Hector Martinez",
         "author_email": "hectoralonzomartinez00@gmail.com",

@@ -1,11 +1,11 @@
 from setuptools import setup
 
 setup(
-    name='VRSS-2_Generate',
+    name='Pku_module',
     version='0.1',
-    description='Utilidades para generacion de archivos de planes de misiones satelitales VRSS para el Subsistema de Gestion y Operaciones ABAE.',
+    description='Utilidades para actualizacion de modulos y paquetes.',
     author='Hector Martinez',
     author_email='hectoralonzomartinez00@gmail.com',
     url='',
-    packages=['VRSS-2_Generate']
+    packages=['Pku_module']
 )

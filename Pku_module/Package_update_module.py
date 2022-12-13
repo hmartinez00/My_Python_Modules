@@ -19,13 +19,8 @@ def listar_paquetes():
 
     __paquetes = []
     for i in subdirectorios:
-        if '.git' in i or \
-            'dist' in i or \
-            'Package_update' in i or \
-            '.egg-info' in i:
-            pass
-        else:
-            __paquetes.append(i)
+        if '.egg-info' in i:
+            __paquetes.append(i.split('.egg-info')[0])
 
     return __paquetes
 
