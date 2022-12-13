@@ -35,8 +35,12 @@ f = open(file, 'w')
 f.write("")
 f.close()
 
-# Actualizando setupa
-actualizar_setup(package_name)
+# Actualizando setup
+ruta_archivo_json = 'Package_update/settings_setups.json'
+with open(ruta_archivo_json) as archivo_json:
+    datos_json = json.load(archivo_json)
+package = datos_json[package_name]
+actualizar_setup(package)
 
 # Creando Paquete
 shell_order = 'python setup.py sdist'

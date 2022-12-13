@@ -51,18 +51,6 @@ setup(
     except:
         print('Proyecto no encontrado!')
 
-def crear_paquetes(__dir_dist, __project):
-    __tar_project = project_route(__dir_dist, __project)
-
-    if __tar_project != None:
-
-        shell_order = 'python setup.py sdist'
-
-        subprocess.run(shell_order)
-
-    else:
-        print('El paquete no fue encontrado!')
-
 def actualizar_paquetes(__dir_dist, __project):
     __tar_project = project_route(__dir_dist, __project)
 
