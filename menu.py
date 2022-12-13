@@ -1,10 +1,11 @@
+import os
 import subprocess
 from General_Utilities.option_list import option_list
 
 subprocess.run('clear')
 
 opciones=[
-	'Generar Setup',
+	'Crear paquete vacio',
 	'Actualizar un paquete',
 	'Actualizar todos los paquetes',
 	'Salir',
@@ -13,7 +14,7 @@ opciones=[
 opcion = option_list(opciones)
 
 if opcion==opciones[0]:
-	exec(open("Package_update/setup_generator.py").read())
+	exec(open("Package_update/builder.py").read())
 elif opcion==opciones[1]:
 	exec(open("Package_update/single_updater.py").read())
 elif opcion==opciones[2]:

@@ -1,8 +1,9 @@
 import json
 import os
+import subprocess
+from Pku_module.Package_update_module import actualizar_setup
 
 # Actualizando Json
-
 package_name = input('Introduzca el nombre del nuevo paquete: ')
 package_description = input('Introduzca la desripcion del nuevo paquete: ')
 
@@ -28,9 +29,15 @@ with open(ruta_archivo_json, 'w') as archivo_json:
 
 
 # Creando directorio del paquete
-
 os.makedirs(package_name)
 file = package_name + '/__init__.py'
 f = open(file, 'w')
 f.write("")
 f.close()
+
+# Actualizando setupa
+actualizar_setup(package_name)
+
+# Creando Paquete
+shell_order = 'python setup.py sdist'
+subprocess.run(shell_order)
