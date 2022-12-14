@@ -20,11 +20,8 @@ pregunta = input('Desea actualizar version del paquete? (S/N): ')
 if pregunta == 's' or 'S':
 
     version = package['version']
-
     print(f'Version actual: {version}')
-
     version = input('Introduzca la nueva version: ')
-
     package['version'] = version
 
     with open(ruta_archivo_json, 'w') as archivo_json:
