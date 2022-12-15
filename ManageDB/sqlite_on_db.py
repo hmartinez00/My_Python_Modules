@@ -46,10 +46,13 @@ def sql_inject(__db__, __sql__):
 	cursor.execute(__sql__)
 	conn.close()
 
-def reset_count(__db__, __table__):
-	add_id = 'UPDATE ' + __table__ + ' SET ' \
-    '"Id"=20 WHERE "Id"=2;'
-	sql_inject(__db__, add_id)
+def reset_count(__db__, __table__, campo, a, b):
+	__sql__ = 'UPDATE ' + __table__ + ' SET ' \
+    f'"{campo}"={b} WHERE "{campo}"={a};'
+	conn = sqlite3.connect(__db__)
+	cursor = conn.cursor()
+	cursor.execute(__sql__)
+	conn.close()
 
 def selectall(__db__, __table__):
 	conn = sqlite3.connect(__db__)
