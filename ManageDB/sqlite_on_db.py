@@ -2,6 +2,7 @@ import pandas as pd
 import sqlite3
 from sqlite3 import Error
 
+
 def create_connection(__db__):
     """ create a database connection to a SQLite database """
     conn = None
@@ -38,6 +39,17 @@ def create_table(__db__, __table__, __dict__):
 	cursor = conn.cursor()
 	cursor.execute(sql)
 	conn.close()
+
+def sql_inject(__db__, __sql__):
+	conn = sqlite3.connect(__db__)
+	cursor = conn.cursor()
+	cursor.execute(__sql__)
+	conn.close()
+
+def reset_count(__db__, __table__):
+	add_id = 'UPDATE ' + __table__ + ' SET ' \
+    '"Id"=20 WHERE "Id"=2;'
+	sql_inject(__db__, add_id)
 
 def selectall(__db__, __table__):
 	conn = sqlite3.connect(__db__)

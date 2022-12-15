@@ -27,6 +27,12 @@ if pregunta == 's' or 'S':
     with open(ruta_archivo_json, 'w') as archivo_json:
         json.dump(datos_json, archivo_json, indent=4)
 
+elif pregunta == 'n' or 'N':
+    pass
+else:
+    pass
+
+
 actualizar_setup(package)
 actualizar_paquetes(dir_dist, project)
 
