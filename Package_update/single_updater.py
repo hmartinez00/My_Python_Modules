@@ -1,3 +1,4 @@
+from ast import Continue
 import json
 from General_Utilities.cntrl_exit import salida
 from General_Utilities.option_list import option_list
@@ -27,8 +28,6 @@ if pregunta == 's' or 'S':
     with open(ruta_archivo_json, 'w') as archivo_json:
         json.dump(datos_json, archivo_json, indent=4)
 
-elif pregunta == 'n' or 'N':
-    pass
 else:
     pass
 
