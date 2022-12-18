@@ -18,7 +18,7 @@ package = datos_json[project]
 
 pregunta = input('Desea actualizar version del paquete? (S/N): ')
 
-if pregunta == 's' or 'S':
+if pregunta == 's' or pregunta == 'S':
 
     version = package['version']
     print(f'Version actual: {version}')
@@ -28,7 +28,7 @@ if pregunta == 's' or 'S':
     with open(ruta_archivo_json, 'w') as archivo_json:
         json.dump(datos_json, archivo_json, indent=4)
 
-else:
+elif pregunta == 'n' or pregunta == 'N':
     pass
 
 

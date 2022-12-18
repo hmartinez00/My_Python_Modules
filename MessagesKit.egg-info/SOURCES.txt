@@ -3,6 +3,7 @@ setup.py
 MessagesKit/__init__.py
 MessagesKit/msg_config.py
 MessagesKit/msgo.py
+MessagesKit/str_msg_format.py
 MessagesKit.egg-info/PKG-INFO
 MessagesKit.egg-info/SOURCES.txt
 MessagesKit.egg-info/dependency_links.txt
