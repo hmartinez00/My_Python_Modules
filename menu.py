@@ -2,7 +2,7 @@ import os
 import subprocess
 from General_Utilities.option_list import option_list
 
-subprocess.run('clear')
+subprocess.run('cls', shell=True)
 
 opciones=[
 	'Crear paquete vacio',

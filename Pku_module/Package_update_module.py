@@ -52,13 +52,13 @@ def actualizar_paquetes(__dir_dist, __project):
     if __tar_project != None:
 
         shell_order = [
-            'clear',
+            'cls',
             'python setup.py sdist',
             'pip install ' + __tar_project,
         ]
 
         for i in shell_order:
-            subprocess.run(i)
+            subprocess.run(i, shell=True)
 
     else:
         print('El paquete no fue encontrado!')

@@ -57,6 +57,6 @@ actualizar_setup(package)
 # Creando Paquete
 # -------------------------------------------
 shell_order = 'python setup.py sdist'
-subprocess.run(shell_order)
+subprocess.run(shell_order, shell=True)
 
 # -------------------------------------------
