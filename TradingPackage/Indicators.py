@@ -15,6 +15,7 @@ class Indicators:
         self.Low = self.df.get('Low')
         self.EMATP = 9
         self.RSITP = 14
+        self.CCITP = 20
         self.MACD_period_fast = 12
         self.MACD_period_slow = 26
         self.MACD_signal = 9
@@ -45,6 +46,21 @@ class Indicators:
         timeperiod = self.RSITP if timeperiod is None else timeperiod
 
         return ta.rsi(
+                    self.Close, 
+                    timeperiod
+                )
+
+    def cci(
+                self,
+                timeperiod: int = None,
+            ):
+        '''
+        Devuelve Commodity Chanel Index.
+        '''
+
+        timeperiod = self.CCITP if timeperiod is None else timeperiod
+
+        return ta.cci(
                     self.Close, 
                     timeperiod
                 )

@@ -62,6 +62,25 @@ Delta_emas: {ema10 - ema55:.2f}, Delta_squeeze: {squeeze.iloc[-1] - squeeze.iloc
 
         return respuesta, msg
 
+    def simple_scalper(self):
+        
+        bot = info(
+            self.pair,
+            self.temporality,
+        )
+
+        df = ind(bot.candlesticks())
+
+        moment, actual_price, cci = (
+            dt.strftime(
+                dt.now(), '%Y-%m-%d %H:%M:%S'
+            ),
+            bot.symbol_price(), 
+            df.cci().iloc[-1],
+        )
+
+        return moment, actual_price, cci
+
     def strategy_macd(self):
         
         bot = info(
