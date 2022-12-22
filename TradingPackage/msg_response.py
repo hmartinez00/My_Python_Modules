@@ -12,6 +12,7 @@ class strmsg:
         if self.__method_name__ == 'trading_latino':
 
             tupla = self.__tuple__
+
             moment = tupla[0]
             actual_price = tupla[2]
             ema10 = tupla[3]
@@ -31,4 +32,20 @@ squeeze.iloc[-2]: {squeeze2:.2f}, adx.iloc[-2]: {adx2:.2f}
 Delta10_actual_price: {ema10 - actual_price:.2f}, Delta55_actual_price: {ema55 - actual_price:.2f}
 Delta_emas: {ema10 - ema55:.2f}, Delta_squeeze: {squeeze1 - squeeze2:.2f}, Delta_adx: {adx1 - adx2:.2f}
 '''
-            return response
+
+        elif self.__method_name__ == 'strategy_cci':
+
+            tupla = self.__tuple__
+
+            moment = tupla[0]
+            actual_price = tupla[1]
+            cci = tupla[2]
+
+            response = \
+f'''
+DateTime: {moment}
+Actual Price: {actual_price}
+CCI: {cci}
+'''
+
+        return response

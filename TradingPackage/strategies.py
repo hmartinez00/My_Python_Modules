@@ -53,20 +53,10 @@ class set_values:
             'trading_latino',
             respuesta
         ).msg()
-#         msg = \
-# f'''{moment}
-
-# actual_price: {actual_price:.2f}, ema10: {ema10:.2f}, ema55: {ema55:.2f}
-# squeeze.iloc[-1]: {squeeze.iloc[-1]:.2f}, adx.iloc[-1]: {adx.iloc[-1]:.2f}
-# squeeze.iloc[-2]: {squeeze.iloc[-2]:.2f}, adx.iloc[-2]: {adx.iloc[-2]:.2f}
-
-# Delta10_actual_price: {ema10 - actual_price:.2f}, Delta55_actual_price: {ema55 - actual_price:.2f}
-# Delta_emas: {ema10 - ema55:.2f}, Delta_squeeze: {squeeze.iloc[-1] - squeeze.iloc[-2]:.2f}, Delta_adx: {adx.iloc[-1] - adx.iloc[-2]:.2f}
-# '''
 
         return respuesta, msg
 
-    def simple_scalper(self):
+    def strategy_cci(self):
         
         bot = info(
             self.pair,
@@ -89,7 +79,12 @@ class set_values:
                 cci
             )
 
-        return respuesta
+        msg = strmsg(
+            'strategy_cci',
+            respuesta
+        ).msg()
+
+        return respuesta, msg
 
     def strategy_macd(self):
         
