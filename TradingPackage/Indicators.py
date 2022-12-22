@@ -61,6 +61,8 @@ class Indicators:
         timeperiod = self.CCITP if timeperiod is None else timeperiod
 
         return ta.cci(
+                    self.High,
+                    self.Low,
                     self.Close, 
                     timeperiod
                 )

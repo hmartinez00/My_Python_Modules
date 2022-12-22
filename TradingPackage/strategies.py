@@ -1,9 +1,9 @@
 from datetime import datetime as dt
 import time
-
 from matplotlib import colors
 from TradingPackage.Bbinance import Binancebot as info
 from TradingPackage.Indicators import Indicators as ind
+from TradingPackage.msg_response import strmsg
 import matplotlib.pyplot as plt
 import mplfinance as mpf
 from market_profile import MarketProfile
@@ -49,16 +49,20 @@ class set_values:
 
         respuesta = moment, condiciones, actual_price, ema10, ema55, adx.iloc[-1], squeeze.iloc[-1], adx.iloc[-2], squeeze.iloc[-2]
 
-        msg = \
-f'''{moment}
+        msg = strmsg(
+            'trading_latino',
+            respuesta
+        ).msg()
+#         msg = \
+# f'''{moment}
 
-actual_price: {actual_price:.2f}, ema10: {ema10:.2f}, ema55: {ema55:.2f}
-squeeze.iloc[-1]: {squeeze.iloc[-1]:.2f}, adx.iloc[-1]: {adx.iloc[-1]:.2f}
-squeeze.iloc[-2]: {squeeze.iloc[-2]:.2f}, adx.iloc[-2]: {adx.iloc[-2]:.2f}
+# actual_price: {actual_price:.2f}, ema10: {ema10:.2f}, ema55: {ema55:.2f}
+# squeeze.iloc[-1]: {squeeze.iloc[-1]:.2f}, adx.iloc[-1]: {adx.iloc[-1]:.2f}
+# squeeze.iloc[-2]: {squeeze.iloc[-2]:.2f}, adx.iloc[-2]: {adx.iloc[-2]:.2f}
 
-Delta10_actual_price: {ema10 - actual_price:.2f}, Delta55_actual_price: {ema55 - actual_price:.2f}
-Delta_emas: {ema10 - ema55:.2f}, Delta_squeeze: {squeeze.iloc[-1] - squeeze.iloc[-2]:.2f}, Delta_adx: {adx.iloc[-1] - adx.iloc[-2]:.2f}
-'''
+# Delta10_actual_price: {ema10 - actual_price:.2f}, Delta55_actual_price: {ema55 - actual_price:.2f}
+# Delta_emas: {ema10 - ema55:.2f}, Delta_squeeze: {squeeze.iloc[-1] - squeeze.iloc[-2]:.2f}, Delta_adx: {adx.iloc[-1] - adx.iloc[-2]:.2f}
+# '''
 
         return respuesta, msg
 
@@ -79,7 +83,13 @@ Delta_emas: {ema10 - ema55:.2f}, Delta_squeeze: {squeeze.iloc[-1] - squeeze.iloc
             df.cci().iloc[-1],
         )
 
-        return moment, actual_price, cci
+        respuesta = (
+                moment,
+                actual_price,
+                cci
+            )
+
+        return respuesta
 
     def strategy_macd(self):
         

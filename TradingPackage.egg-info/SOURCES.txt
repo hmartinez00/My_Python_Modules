@@ -4,6 +4,7 @@ TradingPackage/Bbinance.py
 TradingPackage/Indicators.py
 TradingPackage/Special_Indicators.py
 TradingPackage/__init__.py
+TradingPackage/msg_response.py
 TradingPackage/strategies.py
 TradingPackage.egg-info/PKG-INFO
 TradingPackage.egg-info/SOURCES.txt
