@@ -40,12 +40,15 @@ Delta_emas: {ema10 - ema55:.2f}, Delta_squeeze: {squeeze1 - squeeze2:.2f}, Delta
             moment = tupla[0]
             actual_price = tupla[1]
             cci = tupla[2]
+            condicion = tupla[3]
 
             response = \
 f'''
 DateTime: {moment}
 Actual Price: {actual_price}
 CCI: {cci}
+
+{condicion}
 '''
 
         return response

@@ -73,10 +73,18 @@ class set_values:
             df.cci().iloc[-1],
         )
 
+        if cci > 100:
+            condicion = 'COMPRA!'
+        elif cci < -100:
+            condicion = 'VENTA!'
+        else:
+            condicion = ''
+
         respuesta = (
                 moment,
                 actual_price,
-                cci
+                cci,
+                condicion
             )
 
         msg = strmsg(
