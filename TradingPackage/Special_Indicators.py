@@ -6,6 +6,7 @@ class Sind:
 
     def __init__(self, data):
         self.df = data
+        self.Open = self.df.get('Open')
         self.Close = self.df.get('Close')
         self.High = self.df.get('High')
         self.Low = self.df.get('Low')
@@ -48,3 +49,48 @@ class Sind:
         self.df['SQZ'] = self.df['SQZ'].rolling(window=length_KC).apply(func, raw=True)
 
         return self.df['SQZ']
+
+
+    def critical_points(self):
+
+        Cierre = self.Close
+        Apertura = self.Open
+        critical = [[False, False] for i in range(len(Cierre))]
+
+        for i in range(len(Cierre)):
+
+            if i > 0 and i < len(Cierre) - 1:
+                if \
+                    Cierre[i] > Cierre[i-1] and \
+                    Cierre[i] > Apertura[i-1] and \
+                    Cierre[i] > Cierre[i+1] and \
+                    Cierre[i] > Apertura[i+1]:
+                    critical[i][0] = Cierre[i]
+
+                if \
+                    Cierre[i] < Cierre[i-1] and \
+                    Cierre[i] < Apertura[i-1] and \
+                    Cierre[i] < Cierre[i+1] and \
+                    Cierre[i] < Apertura[i+1]:
+                    critical[i][1] = Cierre[i]
+
+                if \
+                    Apertura[i] > Cierre[i-1] and \
+                    Apertura[i] > Apertura[i-1] and \
+                    Apertura[i] > Cierre[i+1] and \
+                    Apertura[i] > Apertura[i+1]:
+                    critical[i][0] = Apertura[i]
+
+                if \
+                    Apertura[i] < Cierre[i-1] and \
+                    Apertura[i] < Apertura[i-1] and \
+                    Apertura[i] < Cierre[i+1] and \
+                    Apertura[i] < Apertura[i+1]:
+                    critical[i][1] = Apertura[i]
+
+        dataf = pd.DataFrame(
+                critical,
+                columns=['Max', 'Min']
+            )
+
+        return dataf
