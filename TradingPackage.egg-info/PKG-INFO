@@ -1,10 +1,7 @@
-Metadata-Version: 1.0
+Metadata-Version: 2.1
 Name: TradingPackage
 Version: 0.1
 Summary: Contiene modules para la gestion de objetos de la Api de Binance, modulos para gestion de indicadores, y modulos para gestion de estrategias.
-Home-page: UNKNOWN
+Home-page: 
 Author: Hector Martinez
 Author-email: hectoralonzomartinez00@gmail.com
-License: UNKNOWN
-Description: UNKNOWN
-Platform: UNKNOWN
