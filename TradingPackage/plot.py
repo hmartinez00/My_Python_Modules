@@ -129,4 +129,75 @@ class set_plot:
         fig.savefig(file)
         if show == True:
             plt.show()
-        plt.close(fig)    
+        plt.close(fig)
+
+    def plot_standard(
+            self, 
+            Graph_list,
+            x,
+            show = False,
+        ):
+        bot = info(
+            self.pair,
+            self.temporality,
+        )
+
+        df = bot.candlesticks()
+
+        # Definiendo set de colores
+        Titulo = f"Temporalidad {self.temporality}"
+        sub_title1 = 'EMA10 y EMA55'
+        sub_title2 = 'ADX y Squeeze Lazybear'
+        Label_Graph1 = 'EMA10'
+        Label_Graph2 = 'EMA55'
+        Label_Graph3 = 'ADX'
+        Label_Graph4 = 'Lazybear'
+        LabelY = 'Price'
+        file = 'plots/status.png'
+        fondo = '#161A25'
+        contraste = 'white'
+        color_Graph1 = '#2962FF'
+        color_Graph2 = '#FF6229'
+        verde_claro = '#0A9711'
+        verde_oscuro = '#0A5111'
+        rojo_claro = '#AA1C20'
+        rojo_oscuro = '#520B10'
+        letras = '#9598A1'
+
+        # Especificaciones generales de las graficas
+        fig, ax = plt.subplots(2)
+        # mpf.plot(df, ax = ax[0], ema = (10, 55), type='candle', style='charles', mavcolors = [color_Graph1, color_Graph2])
+        fig.set_facecolor(fondo)
+
+        # Graficando funcion 1
+        # ax[0].set_ylabel(LabelY)
+        # ax[0].set_facecolor(fondo) #fondo
+        # ax[0].tick_params(colors=letras)
+        # ax[0].yaxis.label.set_color(letras)
+        # ax[0].xaxis.label.set_color(letras)
+
+
+        # Graficando funcion 2
+        # x = df.index.to_list()
+        Graph = []
+        for i in Graph_list:
+            Graph.append([i for j in df.index.to_list()])
+
+        for i in [0,1]:
+            ax[0].plot(x, Graph[i], color=color_Graph1, label=Label_Graph2, alpha=0.3)
+
+        ax[0].set_ylabel(LabelY)
+        ax[0].set_facecolor(fondo) #fondo
+        ax[0].tick_params(colors=letras)
+        ax[0].yaxis.label.set_color(letras)
+        ax[0].xaxis.label.set_color(letras)
+
+
+        ax[0].grid(linestyle='--', alpha=0.3)
+
+        # Configuraciones finales       
+        fig.suptitle(Titulo, color=contraste, alpha=0.7)
+        fig.savefig(file)
+        if show == True:
+            plt.show()
+        plt.close(fig)
