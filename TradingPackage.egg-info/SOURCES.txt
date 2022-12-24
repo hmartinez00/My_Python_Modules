@@ -5,6 +5,7 @@ TradingPackage/Indicators.py
 TradingPackage/Special_Indicators.py
 TradingPackage/__init__.py
 TradingPackage/msg_response.py
+TradingPackage/plot.py
 TradingPackage/strategies.py
 TradingPackage.egg-info/PKG-INFO
 TradingPackage.egg-info/SOURCES.txt
