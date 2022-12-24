@@ -166,7 +166,7 @@ class set_plot:
 
         # Especificaciones generales de las graficas
         fig, ax = plt.subplots(2)
-        # mpf.plot(df, ax = ax[0], ema = (10, 55), type='candle', style='charles', mavcolors = [color_Graph1, color_Graph2])
+        mpf.plot(df, ax = ax[0], ema = (10, 55), type='candle', style='charles', datetime_format = '%Y-%m-%d %H:%M:%S', mavcolors = [color_Graph1, color_Graph2])
         fig.set_facecolor(fondo)
 
         # Graficando funcion 1
@@ -179,12 +179,12 @@ class set_plot:
 
         # Graficando funcion 2
         # x = df.index.to_list()
-        Graph = []
-        for i in Graph_list:
-            Graph.append([i for j in df.index.to_list()])
+        # Graph = []
+        # for i in Graph_list:
+        #     Graph.append([i for j in df.index.to_list()])
 
-        for i in [0,1]:
-            ax[0].plot(x, Graph[i], color=color_Graph1, label=Label_Graph2, alpha=0.3)
+        # for i in range(len(Graph_list)):
+        #     ax[0].plot(x, Graph[i], color=color_Graph1, label=Label_Graph2, alpha=1)
 
         ax[0].set_ylabel(LabelY)
         ax[0].set_facecolor(fondo) #fondo
