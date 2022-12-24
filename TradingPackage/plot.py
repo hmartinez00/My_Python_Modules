@@ -50,6 +50,7 @@ class set_plot:
         mp_slice = mp[df.index.min():df.index.max()]
         keys = mp_slice.profile.index.tolist()
         valores = mp_slice.profile.values.tolist()
+
         _adx = ind(df).adx()
         _squeeze = ind(df).lazybear()
 
@@ -104,24 +105,24 @@ class set_plot:
         ax2.tick_params(colors=letras)
         ax2.yaxis.label.set_color(letras)
         ax2.xaxis.label.set_color(letras)
-        ax2.fill_between(
-                _squeeze.index, _squeeze, where=_squeeze > 0, 
-                facecolor=verde_oscuro #'darkgreen'
-            )
-        ax2.fill_between(
-                _squeeze.index, _squeeze, where=(_squeeze > 0) & (_squeeze.shift() < _squeeze), 
-                facecolor=verde_claro # Verde Claro.
-            )
-        ax2.fill_between(
-                _squeeze.index, _squeeze, where=_squeeze < 0, 
-                facecolor=rojo_oscuro#'darkred'
-            )
-        ax2.fill_between(
-                _squeeze.index, _squeeze, where=(_squeeze < 0) & (_squeeze.shift() > _squeeze), 
-                facecolor=rojo_claro#'red'
-            )
+        # ax2.fill_between(
+        #         _squeeze.index, _squeeze, where=_squeeze > 0, 
+        #         facecolor=verde_oscuro #'darkgreen'
+        #     )
+        # ax2.fill_between(
+        #         _squeeze.index, _squeeze, where=(_squeeze > 0) & (_squeeze.shift() < _squeeze), 
+        #         facecolor=verde_claro # Verde Claro.
+        #     )
+        # ax2.fill_between(
+        #         _squeeze.index, _squeeze, where=_squeeze < 0, 
+        #         facecolor=rojo_oscuro#'darkred'
+        #     )
+        # ax2.fill_between(
+        #         _squeeze.index, _squeeze, where=(_squeeze < 0) & (_squeeze.shift() > _squeeze), 
+        #         facecolor=rojo_claro#'red'
+        #     )
 
-        ax[1].grid(linestyle='--', alpha=0.3)
+        # ax[1].grid(linestyle='--', alpha=0.3)
 
         # Configuraciones finales       
         fig.suptitle(Titulo, color=contraste, alpha=0.7)
