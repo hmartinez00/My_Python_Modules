@@ -69,7 +69,6 @@ def actualizar_paquetes(__dir_dist, __project):
 def auto_commit(__project):
 
     ahora = dt.now()
-    etiqueta = f'Version Estable {BatchID(ahora)} {TimeID(ahora)}'
 
     rutes = []
     for i in list_files(__project):
@@ -77,24 +76,19 @@ def auto_commit(__project):
             continue
         else:
             rutes.append(i)
+    
+    rutes.append('.gitignore')
 
     total_add = 'git add '
     for i in rutes:
         total_add = total_add + ' ' + i
 
-    # return shell_order
-    
-    # __tar_project = project_route(__dir_dist, __project)
-
-    # if __tar_project != None:
+    commit_order = 'git commit -m "' + f'Version Estable {BatchID(ahora)} {TimeID(ahora)}' + '"'
 
     shell_order = [
         total_add,
-        'git commit -m "' + etiqueta + '"',
+        commit_order,
     ]
 
     for i in shell_order:
         subprocess.run(i, shell=True)
-
-    # else:
-        # print('El paquete no fue encontrado!')
