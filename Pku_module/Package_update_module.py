@@ -1,6 +1,8 @@
 import os
 import subprocess
-import json
+from General_Utilities.option_list import list_files
+from datetime import datetime as dt
+from General_Utilities.fecha import BatchID, TimeID
 
 
 def project_route(__dir_dist, __project):
@@ -62,3 +64,37 @@ def actualizar_paquetes(__dir_dist, __project):
 
     else:
         print('El paquete no fue encontrado!')
+
+
+def auto_commit(__project):
+
+    ahora = dt.now()
+    etiqueta = f'Version Estable {BatchID(ahora)} {TimeID(ahora)}'
+
+    rutes = []
+    for i in list_files(__project):
+        if '.git' in i:
+            continue
+        else:
+            rutes.append(i)
+
+    total_add = 'git add '
+    for i in rutes:
+        total_add = total_add + ' ' + i
+
+    # return shell_order
+    
+    # __tar_project = project_route(__dir_dist, __project)
+
+    # if __tar_project != None:
+
+    shell_order = [
+        total_add,
+        'git commit -m "' + etiqueta + '"',
+    ]
+
+    for i in shell_order:
+        subprocess.run(i, shell=True)
+
+    # else:
+        # print('El paquete no fue encontrado!')

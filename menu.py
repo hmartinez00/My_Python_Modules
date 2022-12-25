@@ -7,6 +7,7 @@ subprocess.run('cls', shell=True)
 opciones=[
 	'Crear paquete vacio',
 	'Actualizar un paquete',
+	'Hacer commit automatico',
 	'Actualizar todos los paquetes',
 	'Salir',
 ]
@@ -18,8 +19,10 @@ if opcion==opciones[0]:
 elif opcion==opciones[1]:
 	exec(open("Package_update/single_updater.py").read())
 elif opcion==opciones[2]:
-	exec(open("Package_update/full_updater.py").read())
+	exec(open("Package_update/git_update.py").read())
 elif opcion==opciones[3]:
+	exec(open("Package_update/full_updater.py").read())
+elif opcion==opciones[4]:
 	print('Adios!')
 else:
 	print('\nOpcion Invalida! Repita la eleccion.\n')
