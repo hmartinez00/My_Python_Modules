@@ -1,3 +1,27 @@
+import os
+
+
+def list_files(__dir):
+    rutes = []
+    os.chdir(__dir)
+    for root, dirs, files in os.walk(".", topdown=False):
+        for name in files:
+            ruta = os.path.join(root, name)
+            rutes.append(ruta)
+    
+    return rutes
+
+def list_dir(__dir):
+    rutes = []
+    os.chdir(__dir)
+    for root, dirs, files in os.walk(".", topdown=False):
+        for name in dirs:
+            ruta = os.path.join(root, name)
+            rutes.append(ruta)
+    
+    return rutes
+
+
 def option_list(__list):
     opciones=__list
 
