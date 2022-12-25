@@ -79,9 +79,11 @@ def auto_commit(__project):
     
     rutes.append('.gitignore')
 
+
     total_add = 'git add '
     for i in rutes:
         total_add = total_add + ' ' + i
+    print(total_add)
 
     commit_order = 'git commit -m "' + f'Version Estable {BatchID(ahora)} {TimeID(ahora)}' + '"'
 
