@@ -1,5 +1,6 @@
 from TradingPackage.Bbinance import Binancebot as info
 from TradingPackage.Indicators import Indicators as ind
+from TradingPackage.Special_Indicators import Sind
 import matplotlib.pyplot as plt
 import mplfinance as mpf
 from market_profile import MarketProfile
@@ -133,8 +134,6 @@ class set_plot:
 
     def plot_standard(
             self, 
-            Graph_list,
-            x,
             show = False,
         ):
         bot = info(
@@ -166,7 +165,12 @@ class set_plot:
 
         # Especificaciones generales de las graficas
         fig, ax = plt.subplots(2)
-        mpf.plot(df, ax = ax[0], ema = (10, 55), type='candle', style='charles', datetime_format = '%Y-%m-%d %H:%M:%S', mavcolors = [color_Graph1, color_Graph2])
+        mpf.plot(df, ax = ax[0], ema = (10, 55), type='candle', style='charles', datetime_format = '%M:%S', mavcolors = [color_Graph1, color_Graph2])
+        fig.set_facecolor(fondo)
+
+        ax2 = ax[0].twiny()
+        ax[0].set_zorder(ax2.get_zorder() + 1)
+        ax[0].patch.set_visible(False)
         fig.set_facecolor(fondo)
 
         # Graficando funcion 1
@@ -176,15 +180,27 @@ class set_plot:
         # ax[0].yaxis.label.set_color(letras)
         # ax[0].xaxis.label.set_color(letras)
 
+        # Estableciendo maximos y minimos
+        Graph_list_Max = [i for i in Sind(df).critical_points()['Max'] if i != False]
+
+        Graph_list_Min = [i for i in Sind(df).critical_points()['Min'] if i != False]
+
 
         # Graficando funcion 2
-        # x = df.index.to_list()
-        # Graph = []
-        # for i in Graph_list:
-        #     Graph.append([i for j in df.index.to_list()])
+        x = df.index.to_list()
+        Graph_Max = []
+        for i in Graph_list_Max:
+            Graph_Max.append([i for j in df.index.to_list()])
 
-        # for i in range(len(Graph_list)):
-        #     ax[0].plot(x, Graph[i], color=color_Graph1, label=Label_Graph2, alpha=1)
+        for i in range(len(Graph_list_Max)):
+            ax2.plot(x, Graph_Max[i], color=color_Graph1, label=Label_Graph2, alpha=0.1)
+
+        Graph_Min = []
+        for i in Graph_list_Min:
+            Graph_Min.append([i for j in df.index.to_list()])
+
+        for i in range(len(Graph_list_Min)):
+            ax2.plot(x, Graph_Min[i], color=color_Graph2, label=Label_Graph2, alpha=0.1)
 
         ax[0].set_ylabel(LabelY)
         ax[0].set_facecolor(fondo) #fondo
