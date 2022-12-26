@@ -96,7 +96,10 @@ class Sind:
         return dataf
     
     def Res(self):
-        Graph_list = [i for i in self.critical_points()['Max'] if i != False]
+        Graph_list = []
+        for i in self.critical_points()['Max']:
+            if i != False:
+                Graph_list.append(i)
 
         return Graph_list
 
