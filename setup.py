@@ -1,11 +1,11 @@
 from setuptools import setup
 
 setup(
-    name='Pku_module',
-    version='0.3',
-    description='Utilidades para actualizacion de modulos y paquetes.',
+    name='MessagesKit',
+    version='0.2',
+    description='Utilidades para mensajeria.',
     author='Hector Martinez',
     author_email='hectoralonzomartinez00@gmail.com',
     url='',
-    packages=['Pku_module']
+    packages=['MessagesKit']
 )

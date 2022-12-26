@@ -27,7 +27,7 @@ class strmsgformat:
             send_pasaje = f"*{self.__title__}*\n" + f"*{self.__Sub__}" + " _(Comentario:)_*\n" + f"\n{self.__text__}"
         
         elif self.__table__ == 'proverbios':
-            send_pasaje = f"Preguntas sobre {self.__title__}\n\n" + f"{self.__text__}"
+            send_pasaje = f"Preguntas sobre {self.__title__}\n\n" + f"{self.__Sub__}\n\nPreguntas:\n\n" + f"{self.__text__}"
 
         elif self.__table__ == 'preguntas_la_buena_semilla':
             send_pasaje = f"Devocional del {self.__date__}\n\n" + f"{self.__Sub__}\n\n" + f"{self.__title__}\n\n" + f"Preguntas:\n\n{self.__text__}"
