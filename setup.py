@@ -1,11 +1,11 @@
 from setuptools import setup
 
 setup(
-    name='MessagesKit',
-    version='0.2',
-    description='Utilidades para mensajeria.',
+    name='General_Utilities',
+    version='0.1',
+    description='Subrutinas generales.',
     author='Hector Martinez',
     author_email='hectoralonzomartinez00@gmail.com',
     url='',
-    packages=['MessagesKit']
+    packages=['General_Utilities']
 )
