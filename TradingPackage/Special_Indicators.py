@@ -94,3 +94,13 @@ class Sind:
             )
 
         return dataf
+    
+    def Res(self):
+        Graph_list = [i for i in self.critical_points()['Max'] if i != False]
+
+        return Graph_list
+
+    def Sup(self):
+        Graph_list = [i for i in self.critical_points()['Min'] if i != False]
+
+        return Graph_list

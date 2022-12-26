@@ -181,10 +181,8 @@ class set_plot:
         # ax[0].xaxis.label.set_color(letras)
 
         # Estableciendo maximos y minimos
-        Graph_list_Max = [i for i in Sind(df).critical_points()['Max'] if i != False]
-
-        Graph_list_Min = [i for i in Sind(df).critical_points()['Min'] if i != False]
-
+        Graph_list_Max = Sind(df).Res()
+        Graph_list_Min = Sind(df).Sup()
 
         # Graficando funcion 2
         x = df.index.to_list()
