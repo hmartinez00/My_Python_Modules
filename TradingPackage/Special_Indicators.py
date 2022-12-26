@@ -96,14 +96,34 @@ class Sind:
         return dataf
     
     def Res(self):
+        actual_price = self.Close.iloc[-1]
+        values = self.critical_points()['Max']
+        
+        Graph_dev = pd.Series([abs(actual_price - i) for i in values if i != False])
+        
         Graph_list = []
-        for i in self.critical_points()['Max']:
+        for i in values:
             if i != False:
-                Graph_list.append(i)
+                Graph_list.append(i)           
+                if abs(actual_price - i) == Graph_dev.min():
+                    Graph_list_near = [i]
 
-        return Graph_list
+        return Graph_list_near
 
     def Sup(self):
-        Graph_list = [i for i in self.critical_points()['Min'] if i != False]
+        # Graph_list = [i for i in self.critical_points()['Min'] if i != False]
 
-        return Graph_list
+        # return Graph_list
+        actual_price = self.Close.iloc[-1]
+        values = self.critical_points()['Min']
+        
+        Graph_dev = pd.Series([abs(actual_price - i) for i in values if i != False])
+        
+        Graph_list = []
+        for i in values:
+            if i != False:
+                Graph_list.append(i)           
+                if abs(actual_price - i) == Graph_dev.min():
+                    Graph_list_near = [i]
+
+        return Graph_list_near

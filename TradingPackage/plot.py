@@ -191,14 +191,14 @@ class set_plot:
             Graph_Max.append([i for j in df.index.to_list()])
 
         for i in range(len(Graph_list_Max)):
-            ax2.plot(x, Graph_Max[i], color=color_Graph1, label=Label_Graph2, alpha=0.1)
+            ax2.plot(x, Graph_Max[i], color=color_Graph1, label=Label_Graph2, alpha=1)
 
         Graph_Min = []
         for i in Graph_list_Min:
             Graph_Min.append([i for j in df.index.to_list()])
 
         for i in range(len(Graph_list_Min)):
-            ax2.plot(x, Graph_Min[i], color=color_Graph2, label=Label_Graph2, alpha=0.1)
+            ax2.plot(x, Graph_Min[i], color=color_Graph2, label=Label_Graph2, alpha=1)
 
         ax[0].set_ylabel(LabelY)
         ax[0].set_facecolor(fondo) #fondo
