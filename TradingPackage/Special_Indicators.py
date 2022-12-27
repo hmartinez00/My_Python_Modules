@@ -95,35 +95,65 @@ class Sind:
 
         return dataf
     
-    def Res(self):
+    def filter(self, values):
+
+        #------------------------------------------------------------
+        # CRITERIOS
+        #------------------------------------------------------------
+        # Existen algunas reglas empíricas que podemos emplear para
+        # la detección de niveles críticos.
+
+        #------------------------------------------------------------
+        #1. Regla del MULTIPLE RECHAZO: 
+        #------------------------------------------------------------
+        # Los niveles deben estar confirmados por multiples rechazos.
+
+        #------------------------------------------------------------
+        #2. Regla del ALEJAMIENTO DRÁSTICO: 
+        #------------------------------------------------------------
+        # El precio debe alejarse drásticamente del máximo o mínimo.
+
+        #------------------------------------------------------------
+        #3. Regla de CERCANÍA AL PRECIO:
+        #------------------------------------------------------------
+        # Los niveles tienen que estar cercanos al precio actual, i.e; 
+        # (cierre de la ultima vela).
+
         actual_price = self.Close.iloc[-1]
-        values = self.critical_points()['Max']
         
         Graph_dev = pd.Series([abs(actual_price - i) for i in values if i != False])
+        Graph_dev = Graph_dev.sort_values(ascending = True).reset_index().iloc[:,1]
         
+        print(Graph_dev)
+
+        # CRITERIOS
+        #1. MULTIPLE RECHAZO.
+
+
+        #2. ALEJAMIENTO DRÁSTICO.
+
+
+        #3. CERCANÍA AL PRECIO.
         Graph_list = []
         for i in values:
             if i != False:
-                if abs(actual_price - i) == Graph_dev.min():
-                    Graph_list.append(i)        
-                    # Graph_list_near = [i]
+                for j in range(3):
+                    if abs(actual_price - i) == Graph_dev.iloc[j]:
+                        Graph_list.append(i)
+
+        
+
+        return Graph_list
+
+
+    def Res(self):
+        values = self.critical_points()['Max']
+        Graph_list = self.filter(values)
 
         return Graph_list
 
     def Sup(self):
-        # Graph_list = [i for i in self.critical_points()['Min'] if i != False]
-
-        # return Graph_list
-        actual_price = self.Close.iloc[-1]
         values = self.critical_points()['Min']
-        
-        Graph_dev = pd.Series([abs(actual_price - i) for i in values if i != False])
-        
-        Graph_list = []
-        for i in values:
-            if i != False:
-                if abs(actual_price - i) == Graph_dev.min():
-                    Graph_list.append(i)           
-                    # Graph_list_near = [i]
+        Graph_list = self.filter(values)        
 
         return Graph_list
