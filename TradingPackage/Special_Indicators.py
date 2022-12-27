@@ -104,11 +104,11 @@ class Sind:
         Graph_list = []
         for i in values:
             if i != False:
-                Graph_list.append(i)           
                 if abs(actual_price - i) == Graph_dev.min():
-                    Graph_list_near = [i]
+                    Graph_list.append(i)        
+                    # Graph_list_near = [i]
 
-        return Graph_list_near
+        return Graph_list
 
     def Sup(self):
         # Graph_list = [i for i in self.critical_points()['Min'] if i != False]
@@ -122,8 +122,8 @@ class Sind:
         Graph_list = []
         for i in values:
             if i != False:
-                Graph_list.append(i)           
                 if abs(actual_price - i) == Graph_dev.min():
-                    Graph_list_near = [i]
+                    Graph_list.append(i)           
+                    # Graph_list_near = [i]
 
-        return Graph_list_near
+        return Graph_list
