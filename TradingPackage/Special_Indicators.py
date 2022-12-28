@@ -96,12 +96,11 @@ class Sind:
         return dataf
     
     def filter(self, values):
-
         #------------------------------------------------------------
         # CRITERIOS
         #------------------------------------------------------------
         # Existen algunas reglas empíricas que podemos emplear para
-        # la detección de niveles críticos.
+        # la detección de niveles críticos notables.
 
         #------------------------------------------------------------
         #1. Regla del MULTIPLE RECHAZO: 
