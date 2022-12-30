@@ -5,6 +5,7 @@ General_Utilities/cntrl_exit.py
 General_Utilities/fecha.py
 General_Utilities/option_list.py
 General_Utilities/prettify.py
+General_Utilities/speech_recognizer.py
 General_Utilities.egg-info/PKG-INFO
 General_Utilities.egg-info/SOURCES.txt
 General_Utilities.egg-info/dependency_links.txt
