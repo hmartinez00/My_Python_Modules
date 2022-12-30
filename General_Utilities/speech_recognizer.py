@@ -11,6 +11,8 @@ def Reconocimiento():
 
     try:
         text = r.recognize_google(audio, language="es-ES")
-        print(f'Haz dicho: {text}')
+        # print(f'Haz dicho: {text}')
     except:
         print('No te he entendido')
+
+    return text
