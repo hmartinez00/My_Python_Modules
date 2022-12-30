@@ -46,13 +46,19 @@ class orders:
             return True
 
     def continue_options(self):
+
         if 'nueva línea' in self.__dictado__:
-            string = string + '\n'
-            return string
+            string = self.string + '\n'
 
         elif 'nuevo párrafo' in self.__dictado__:
-            string = string + '\n\n'
-            return string
+            string = self.string + '\n\n'
+        
+        else:
+            string = self.string + ' ' + str(self.__dictado__)
+        
+        f = open(self.file, 'w')
+        f.write(string)
+        f.close()
 
     def clear(self):
         if 'borrar todo' in self.__dictado__:
@@ -60,5 +66,3 @@ class orders:
             f = open(self.file, 'w')
             f.write(string)
             f.close()
-        else:
-            string = string + ' ' + str(self.__dictado__)
