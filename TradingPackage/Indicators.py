@@ -16,6 +16,7 @@ class Indicators:
         self.EMATP = 9
         self.RSITP = 14
         self.CCITP = 20
+        self.STOCH = 14
         self.MACD_period_fast = 12
         self.MACD_period_slow = 26
         self.MACD_signal = 9
@@ -61,6 +62,23 @@ class Indicators:
         timeperiod = self.CCITP if timeperiod is None else timeperiod
 
         return ta.cci(
+                    self.High,
+                    self.Low,
+                    self.Close, 
+                    timeperiod
+                )
+
+    def stoch(
+                self,
+                timeperiod: int = None,
+            ):
+        '''
+        Indicator: Stochastic Oscillator (STOCH)
+        '''
+
+        timeperiod = self.STOCH if timeperiod is None else timeperiod
+
+        return ta.stoch(
                     self.High,
                     self.Low,
                     self.Close, 

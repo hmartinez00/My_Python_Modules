@@ -80,7 +80,7 @@ class Binancebot:
 
         return float(self._request('ticker_price', params).get('price'))
     
-    def candlesticks(self, limit: int = 200) -> pd.DataFrame:
+    def candlesticks(self, limit: int = 500) -> pd.DataFrame:
 
         '''
         Devuelve las velas japonesas
