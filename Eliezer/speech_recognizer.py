@@ -20,6 +20,7 @@ def Reconocimiento():
 
     return text
 
+
 class orders:
 
     def __init__(
@@ -27,7 +28,6 @@ class orders:
         file,
         __dictado__
     ):
-
 
         self.file = file
         self.__dictado__ = __dictado__
@@ -39,22 +39,24 @@ class orders:
         
         self.string = string
 
-    def close_options(self):
-        if \
-            'finalizar dictado' in self.__dictado__ or \
-            'finalizar comunicación' in self.__dictado__ or \
-            'cerrar comunicación' in self.__dictado__ or \
-            'cierra comunicación' in self.__dictado__:
-           
+    def close_options(self, __list__):
+        if self.__dictado__ in __list__:           
             return True
 
-    def continue_options(self):
+    def secuence_options(self, __list__):
 
-        if 'nueva línea' in self.__dictado__:
-            string = self.string + '\n'
-
-        elif 'nuevo párrafo' in self.__dictado__:
-            string = self.string + '\n\n'
+        if self.__dictado__ in __list__:
+            for i in range(len(__list__)):
+                if self.__dictado__ == __list__[i][0]:
+                    print(
+                            self.__dictado__,
+                            __list__[i][0]
+                        )
+                    string = self.string + __list__[i][1]
+                    # if i == 0:
+                    #     string = self.string + '\n'
+                    # elif i == 1:
+                    #     string = self.string + '\n\n'
         
         else:
             string = self.string + ' ' + str(self.__dictado__)
@@ -63,8 +65,8 @@ class orders:
             f.write(string)
         f.close()
 
-    def clear(self):
-        if 'borrar todo' in self.__dictado__:
+    def clear(self, __list__):
+        if self.__dictado__ in __list__:
             string = ''
             with open(self.file, 'w', encoding='utf-8') as f:
                 f.write(string)
