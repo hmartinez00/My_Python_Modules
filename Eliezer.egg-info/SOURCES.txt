@@ -1,0 +1,8 @@
+README.md
+setup.py
+Eliezer/__init__.py
+Eliezer/speech_recognizer.py
+Eliezer.egg-info/PKG-INFO
+Eliezer.egg-info/SOURCES.txt
+Eliezer.egg-info/dependency_links.txt
+Eliezer.egg-info/top_level.txt
