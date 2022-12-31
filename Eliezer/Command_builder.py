@@ -12,8 +12,8 @@ datos_json = \
             "cierra comunicación"
         ],
         "secuence":[
-            "nueva línea",
-            "nuevo párrafo"
+            ["nueva línea", "\n"],
+            ["nuevo párrafo", "\n\n"]
         ],
         "clear":[
             "borrar todo"

@@ -45,21 +45,23 @@ class orders:
 
     def secuence_options(self, __list__):
 
-        if self.__dictado__ in __list__:
-            for i in range(len(__list__)):
-                if self.__dictado__ == __list__[i][0]:
-                    print(
-                            self.__dictado__,
-                            __list__[i][0]
-                        )
-                    string = self.string + __list__[i][1]
+        value = False
+        for i in range(len(__list__)):
+            if self.__dictado__ == __list__[i][0]:
+                value = True
+        
+        if value == True:
+            string = self.string + __list__[i][1]
                     # if i == 0:
                     #     string = self.string + '\n'
                     # elif i == 1:
                     #     string = self.string + '\n\n'
-        
+       
         else:
             string = self.string + ' ' + str(self.__dictado__)
+        # print(
+        #         self.__dictado__ in __list__
+        #     )
         
         with open(self.file, 'w', encoding='utf-8') as f:
             f.write(string)
