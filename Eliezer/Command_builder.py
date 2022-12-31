@@ -12,8 +12,36 @@ datos_json = \
             "cierra comunicación"
         ],
         "secuence":[
-            ["nueva línea", "\n"],
-            ["nuevo párrafo", "\n\n"]
+            [
+                "nueva línea", 
+                "nuevo párrafo",
+                "signo de coma",
+                "signo de punto",
+                "signo de punto y aparte",
+                "signo de punto y coma",
+                "signo de dos puntos",
+                "abrir signo de interrogación",
+                "cerrar signo de interrogación",
+                "abrir signo de exclamación",
+                "cerrar signo de exclamación",
+                "abrir paréntesis",
+                "cerrar paréntesis",
+            ],
+            [
+                "\n",
+                "\n\n",
+                ",",
+                ".",
+                ".\n\n",
+                ";",
+                ":",
+                "¿",
+                "?",
+                "¡",
+                "!",
+                "(",
+                ")",
+            ]
         ],
         "clear":[
             "borrar todo"
