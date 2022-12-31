@@ -3,6 +3,7 @@ setup.py
 Eliezer/Command_builder.py
 Eliezer/__init__.py
 Eliezer/speech_recognizer.py
+Eliezer/voice.py
 Eliezer.egg-info/PKG-INFO
 Eliezer.egg-info/SOURCES.txt
 Eliezer.egg-info/dependency_links.txt
