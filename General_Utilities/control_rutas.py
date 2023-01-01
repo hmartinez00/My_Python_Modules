@@ -3,15 +3,18 @@ import json
 
 def setting_routes(
     key,
-    prefix,
-    sufix,
+    prefix: str = None,
+    sufix: str = None,
 ):
     file_routes = 'settings/routes/routes.json'
 
     with open(file_routes) as archivo_json:
         datos_json = json.load(archivo_json)
-    ruta_archivo_json = []
-    for i in datos_json[key]:
-        ruta_archivo_json.append(prefix + i + sufix)
+    ruta_archivo = []
     
-    return ruta_archivo_json
+    prefix = 'settings/' + key + '/' if prefix is None else prefix
+
+    for i in datos_json[key]:
+        ruta_archivo.append([i, prefix + i + sufix])
+    
+    return ruta_archivo

@@ -28,7 +28,7 @@ def option_list(__list):
     Lista_opciones=''
     for i in range(len(opciones)):
         Lista_opciones=Lista_opciones+\
-        '\t{}. '.format(i+1) + opciones[i] + '\n'
+        f'\t{i+1}. {opciones[i]}\n'
 
     str_menu='Lista de opciones: \n\n'+\
     Lista_opciones
