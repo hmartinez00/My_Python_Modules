@@ -1,0 +1,45 @@
+{
+    "voice_optiones": {
+        "close": [
+            "finalizar dictado",
+            "finalizar comunicaci\u00f3n",
+            "cerrar comunicaci\u00f3n",
+            "cierra comunicaci\u00f3n"
+        ],
+        "secuence": [
+            [
+                "nueva l\u00ednea",
+                "nuevo p\u00e1rrafo",
+                "signo de coma",
+                "signo de punto",
+                "signo de punto y aparte",
+                "signo de punto y coma",
+                "signo de dos puntos",
+                "abrir signo de interrogaci\u00f3n",
+                "cerrar signo de interrogaci\u00f3n",
+                "abrir signo de exclamaci\u00f3n",
+                "cerrar signo de exclamaci\u00f3n",
+                "abrir par\u00e9ntesis",
+                "cerrar par\u00e9ntesis"
+            ],
+            [
+                "\n",
+                "\n\n",
+                ",",
+                ".",
+                ".\n\n",
+                ";",
+                ":",
+                "\u00bf",
+                "?",
+                "\u00a1",
+                "!",
+                "(",
+                ")"
+            ]
+        ],
+        "clear": [
+            "borrar todo"
+        ]
+    }
+}

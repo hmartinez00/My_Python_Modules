@@ -1,0 +1,16 @@
+{
+    "exec": [
+        [
+            "Crear paquete vacio",
+            "Actualizar un paquete",
+            "Hacer commit automatico",
+            "Actualizar todos los paquetes"
+        ],
+        [
+            "Package_update/builder.py",
+            "Package_update/single_updater.py",
+            "Package_update/git_update.py",
+            "Package_update/full_updater.py"
+        ]
+    ]
+}
