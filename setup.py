@@ -1,11 +1,11 @@
 from setuptools import setup
 
 setup(
-    name='TradingPackage',
+    name='Eliezer',
     version='0.1',
-    description='Contiene modules para la gestion de objetos de la Api de Binance, modulos para gestion de indicadores, y modulos para gestion de estrategias.',
+    description='Asistente dirigido por reconocimiento de voz.',
     author='Hector Martinez',
     author_email='hectoralonzomartinez00@gmail.com',
     url='',
-    packages=['TradingPackage']
+    packages=['Eliezer']
 )
