@@ -41,3 +41,12 @@ def HoraID(__dt__):
 	)
 	
 	return(__fecha__)
+
+def format_FechaID(__strdt__):
+	__fecha__ = datetime.strftime(
+		datetime.strptime(
+			__strdt__, '%Y%m%d'
+		), '%Y-%m-%d'
+	)
+
+	return(__fecha__)
