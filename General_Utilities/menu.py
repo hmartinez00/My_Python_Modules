@@ -3,23 +3,25 @@ from General_Utilities.option_list import option_list
 from General_Utilities.control_rutas import setting_routes
 
 
-subprocess.run('cls', shell=True)
+def menu():
 
-key = 'exec'
-opciones = setting_routes(key)[0]
-acciones = setting_routes(key)[1]
-opciones.append("Salir")
+	subprocess.run('cls', shell=True)
 
-opcion = option_list(opciones)
+	key = 'exec'
+	opciones = setting_routes(key)[0]
+	acciones = setting_routes(key)[1]
+	opciones.append("Salir")
 
-for i in range(len(opciones)):
-	if opcion == opciones[i]:
-		j = i
+	opcion = option_list(opciones)
 
-if j < len(opciones) - 1:
-	exec(open(acciones[j]).read())
-elif j == len(opciones) - 1:
-	print('Adios!')
-else:
-	print('\nOpcion Invalida! Repita la eleccion.\n')
-	exec(open("menu.py").read())
+	for i in range(len(opciones)):
+		if opcion == opciones[i]:
+			j = i
+
+	if j < len(opciones) - 1:
+		exec(open(acciones[j]).read())
+	elif j == len(opciones) - 1:
+		print('Adios!')
+	else:
+		print('\nOpcion Invalida! Repita la eleccion.\n')
+		exec(open("menu.py").read())
