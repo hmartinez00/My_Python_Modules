@@ -1,10 +1,7 @@
-Metadata-Version: 1.0
+Metadata-Version: 2.1
 Name: ManageDB
 Version: 0.2
 Summary: Herramientas para gestion de Bases de Datos SQL.
-Home-page: UNKNOWN
+Home-page: 
 Author: Hector Martinez
 Author-email: hectoralonzomartinez00@gmail.com
-License: UNKNOWN
-Description: UNKNOWN
-Platform: UNKNOWN
