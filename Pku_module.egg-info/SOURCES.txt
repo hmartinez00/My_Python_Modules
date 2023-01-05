@@ -1,6 +1,7 @@
 README.md
 setup.py
 Pku_module/Package_update_module.py
+Pku_module/Project_requirements.py
 Pku_module/__init__.py
 Pku_module.egg-info/PKG-INFO
 Pku_module.egg-info/SOURCES.txt

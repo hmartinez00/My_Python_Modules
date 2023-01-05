@@ -1,11 +1,11 @@
 from setuptools import setup
 
 setup(
-    name='General_Utilities',
-    version='0.1',
-    description='Subrutinas generales.',
+    name='Pku_module',
+    version='0.3',
+    description='Utilidades para actualizacion de modulos y paquetes.',
     author='Hector Martinez',
     author_email='hectoralonzomartinez00@gmail.com',
     url='',
-    packages=['General_Utilities']
+    packages=['Pku_module']
 )
