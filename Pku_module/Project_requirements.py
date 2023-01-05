@@ -13,6 +13,7 @@ def project_requirements():
     directorio = 'settings/requirements'
     ruta_archivo_json = f'{directorio}/requirements.json'
     installed_packages = f'{directorio}/installed_packages.txt'
+    requirements = 'requirements.txt'
     datos_json = {}
     librerias = []
     datos_json['Librerias'] = librerias
@@ -65,7 +66,37 @@ def project_requirements():
                 datos_json['Librerias'] = librerias
 
     # -------------------------------------
+    # Extrayendo listas a cotejar
+    # -------------------------------------
+    keys = list(datos_json.keys())
+    packages = []
+    with open(installed_packages, encoding='utf-8') as f:
+        for line in f:
+            packages.append(line)
+
+    # print(keys, packages)
+
+    # -------------------------------------
+    # Creando el archivo requirements
+    # -------------------------------------
+    string = ''
+    with open(requirements, 'w', encoding='utf-8') as f:
+        f.write(string)
+    f.close()
+
+    string = ''
+    for i in keys:
+        for j in packages:
+            if i.replace('_', '-') in j:
+                string = string + j
+
+    with open(requirements, 'w', encoding='utf-8') as f:
+        f.write(string)
+    f.close()
+
+    # -------------------------------------
     # Volcando la informacion al json
     # -------------------------------------
     with open(ruta_archivo_json, 'w', encoding='utf8') as archivo_json:
         json.dump(datos_json, archivo_json, indent=4)
+    os.remove(installed_packages)
