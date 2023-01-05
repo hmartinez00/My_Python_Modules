@@ -12,7 +12,7 @@ def project_requirements():
     ruta_archivo_json = 'settings/requirements/requirements.json'
     datos_json = {}
     librerias = []
-    datos_json['librerias'] = librerias
+    datos_json['Librerias'] = librerias
 
     if os.path.isfile(ruta_archivo_json):
         pass
@@ -32,14 +32,18 @@ def project_requirements():
         print(file)
         with open(file, encoding='utf-8') as f:
             for line in f:
-                if 'import ' in line and 'from' in line:
-                    element_paquetes = line.split('\n')[0].split(' ')[1]
-                    element_modulos = line.split('\n')[0].split(' ')[-1]
-                    print(datos_json.keys())
+                if 'from' in line and '.' in line:
+                    element_paquetes = line.split('\n')[0].split(' ')[1].split('.')[0]
+                    element_modulos = line.split('\n')[0].split(' ')[1].split('.')[1]
+                    element_clases_funciones = line.split('\n')[0].split(' ')[-1]
+                    print(file, datos_json.keys())
                     if element_paquetes not in datos_json.keys():
                         datos_json[element_paquetes] = [element_modulos]
-                    elif element_paquetes not in datos_json.keys():
-                        datos_json[element_paquetes].append(element_modulos)
+                    elif element_paquetes in datos_json.keys():
+                        lista_modulos = datos_json[element_paquetes]
+                        if element_modulos not in lista_modulos:
+                            lista_modulos.append(element_modulos)
+                        datos_json[element_paquetes] = lista_modulos
 
                 if 'import ' in line and 'from' not in line:
                     element_paquetes = line.split('\n')[0].split(' ')[1]
@@ -47,7 +51,7 @@ def project_requirements():
                     if element_paquetes not in librerias:
                         librerias.append(element_paquetes)
                 
-                datos_json['librerias'] = librerias
+                datos_json['Librerias'] = librerias
 
     # -------------------------------------
     # Volcando la informacion al json
