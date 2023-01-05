@@ -1,5 +1,6 @@
 import os
 import json
+import subprocess
 from General_Utilities.option_list import list_files
 
 
@@ -9,15 +10,25 @@ def project_requirements():
     # Creando el archivo de requerimientos
     # si no existe.
     # -------------------------------------
-    ruta_archivo_json = 'settings/requirements/requirements.json'
+    directorio = 'settings/requirements'
+    ruta_archivo_json = f'{directorio}/requirements.json'
+    installed_packages = f'{directorio}/installed_packages.txt'
     datos_json = {}
     librerias = []
     datos_json['Librerias'] = librerias
 
-    if os.path.isfile(ruta_archivo_json):
+    if \
+        os.path.isfile(ruta_archivo_json) and \
+        os.path.isfile(installed_packages):
         pass
     else:
-        os.makedirs('settings/requirements')
+        if os.path.isdir(directorio):
+            pass
+        else:
+            os.makedirs(directorio)
+
+        subprocess.run(f'pip freeze >> {installed_packages}', shell=True)
+
         with open(ruta_archivo_json, 'w', encoding='utf8') as archivo_json:
             json.dump(datos_json, archivo_json, indent=4)
 
