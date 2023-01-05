@@ -1,0 +1,14 @@
+{
+    "Librerias": [
+        "json",
+        "os",
+        "subprocess"
+    ],
+    "Pku_module": [
+        "Package_update_module"
+    ],
+    "General_Utilities": [
+        "cntrl_exit",
+        "option_list"
+    ]
+}
