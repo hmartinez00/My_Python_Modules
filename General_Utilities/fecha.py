@@ -1,4 +1,5 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
+
 
 def BatchID(__dt__):
 	__fecha__ = datetime.strftime(
@@ -48,5 +49,12 @@ def format_FechaID(__strdt__):
 			__strdt__, '%Y%m%d'
 		), '%Y-%m-%d'
 	)
+
+	return(__fecha__)
+
+def time_fechaID(__strdt__):
+	__fecha__ = date.strftime(
+			__strdt__, '%Y%m%d'
+		)
 
 	return(__fecha__)
