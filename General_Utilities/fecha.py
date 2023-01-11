@@ -52,9 +52,9 @@ def format_FechaID(__strdt__):
 
 	return(__fecha__)
 
-def time_fechaID(__strdt__):
+def date_fechaID(__strdt__):
 	__fecha__ = datetime.strptime(
 			__strdt__, '%Y%m%d'
-		)
+		).date()
 
 	return(__fecha__)
