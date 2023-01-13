@@ -32,11 +32,8 @@ class strmsgformat:
         elif self.__table__ == 'preguntas_la_buena_semilla':
             send_pasaje = f"Devocional del {self.__date__}\n\n" + f"{self.__Sub__}\n\n" + f"{self.__title__}\n\n" + f"Preguntas:\n\n{self.__text__}"
 
-        elif self.__table__ == 'preguntas_la_buena_semilla':
-            send_pasaje = f"Devocional del {self.__date__}\n\n" + f"{self.__Sub__}\n\n" + f"{self.__title__}\n\n" + f"Preguntas:\n\n{self.__text__}"
-
         elif self.__table__ == 'preguntas_lecturas':
-            send_pasaje = f"Preguntas sobre: {self.__title__}\n\n" + f"{self.__text__}"
+            send_pasaje = f"Preguntas sobre: {self.__title__}\n\n" + f"{self.__Sub__}\n\n" + f"{self.__text__}"
 
         else:
             print('''Error en modulo str_msg_format.py:
