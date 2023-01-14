@@ -5,11 +5,13 @@ from binance.spot import Spot
 import pandas as pd
 import numpy as np
 from datetime import datetime as dt
+from General_Utilities.control_rutas import setting_routes
 
 
 class Binancebot:
 
-    ruta_archivo_json = 'settings.json'
+    key = 'api'
+    ruta_archivo_json = setting_routes(key)[0]
     with open(ruta_archivo_json) as archivo_json:
         datos_json = json.load(archivo_json)
 

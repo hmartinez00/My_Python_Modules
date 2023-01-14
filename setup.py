@@ -1,11 +1,11 @@
 from setuptools import setup
 
 setup(
-    name='General_Utilities',
+    name='TradingPackage',
     version='0.1',
-    description='Subrutinas generales.',
+    description='Contiene modules para la gestion de objetos de la Api de Binance, modulos para gestion de indicadores, y modulos para gestion de estrategias.',
     author='Hector Martinez',
     author_email='hectoralonzomartinez00@gmail.com',
     url='',
-    packages=['General_Utilities']
+    packages=['TradingPackage']
 )
