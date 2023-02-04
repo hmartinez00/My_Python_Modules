@@ -2,6 +2,7 @@
 
 import json
 from binance.spot import Spot
+from binance.um_futures import UMFutures
 import pandas as pd
 import numpy as np
 from datetime import datetime as dt
@@ -17,7 +18,8 @@ class Binancebot:
 
     __api_key = datos_json['API_KEY']
     __api_secret = datos_json['API_SECRET']
-    binance_client = Spot(key=__api_key, secret=__api_secret)
+    # binance_client = Spot(key=__api_key, secret=__api_secret)
+    binance_client = UMFutures(key=__api_key, secret=__api_secret)
 
     def __init__(self, pair: str, temporality: str):
         self.pair = pair.upper()
@@ -33,13 +35,11 @@ class Binancebot:
         En caso de necesitarse parametros para endpint, o metodos propios de Api, se deben introducir mediante un diccionario. Lo veremos con los objetos llamados "params" en varios de los metodos de la clase.
         '''
         
-        # while True:
         try:
             response = getattr(self.binance_client, endpoint) # => self.binance_client.endpoint
             return response() if parameters is None else response(**parameters)
         except:
             response()
-            # pass
             print(f'El endpoint "{endpoint}" ha fallado. \n\nParametros: {parameters}')
 
 
