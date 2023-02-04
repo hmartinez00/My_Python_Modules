@@ -9,7 +9,7 @@ from datetime import datetime as dt
 from General_Utilities.control_rutas import setting_routes
 
 
-class Binancebot:
+class Future_Binancebot:
 
     key = 'api'
     ruta_archivo_json = setting_routes(key)[0]
@@ -18,7 +18,7 @@ class Binancebot:
 
     __api_key = datos_json['API_KEY']
     __api_secret = datos_json['API_SECRET']
-    binance_client = Spot(key=__api_key, secret=__api_secret)
+    binance_client = UMFutures(key=__api_key, secret=__api_secret)
 
     def __init__(
             self, 
@@ -67,7 +67,7 @@ class Binancebot:
         Devuelve una lista de todas las cryptos que tienen saldo positivo
         '''
 
-        return [crypto for crypto in self.binance_account().get('balances') if float(crypto.get('free')) > 0]
+        return [crypto for crypto in self.binance_account().get('balance') if float(crypto.get('free')) > 0]
 
     def symbol_price(self, pair: str = None):
         '''
