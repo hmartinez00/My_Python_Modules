@@ -1,13 +1,7 @@
 from datetime import datetime as dt
-import time
-from matplotlib import colors
-from TradingPackage.Bbinance import Binancebot as info
 from TradingPackage.Fbinance import Future_Binancebot as Finfo
 from TradingPackage.Indicators import Indicators as ind
 from TradingPackage.msg_response import strmsg
-import matplotlib.pyplot as plt
-import mplfinance as mpf
-from market_profile import MarketProfile
 
 
 class set_values:
@@ -24,7 +18,7 @@ class set_values:
 
     def trading_latino(self):
 
-        bot = info(
+        bot = Finfo(
             self.pair,
             self.temporality,
         )
@@ -59,7 +53,7 @@ class set_values:
 
     def strategy_cci(self):
         
-        bot = info(
+        bot = Finfo(
             self.pair,
             self.temporality,
         )
@@ -97,7 +91,7 @@ class set_values:
 
     def strategy_macd(self):
         
-        bot = info(
+        bot = Finfo(
             self.pair,
             self.temporality,
         )

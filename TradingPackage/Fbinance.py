@@ -141,4 +141,5 @@ class Future_Binancebot:
         Abre una orden
         '''
         params = __order__       
-        self.binance_client.new_order(**params)
+
+        self._request('new_order', params)

@@ -5,6 +5,7 @@ TradingPackage/Fbinance.py
 TradingPackage/Indicators.py
 TradingPackage/Special_Indicators.py
 TradingPackage/__init__.py
+TradingPackage/futures_strategies.py
 TradingPackage/msg_response.py
 TradingPackage/plot.py
 TradingPackage/strategies.py
