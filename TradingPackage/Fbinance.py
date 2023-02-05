@@ -67,7 +67,8 @@ class Future_Binancebot:
         Devuelve una lista de todas las cryptos que tienen saldo positivo
         '''
 
-        return [crypto for crypto in self.binance_account().get('balance') if float(crypto.get('free')) > 0]
+        # return [crypto for crypto in self.binance_account().get('balance') if float(crypto.get('free')) > 0]
+        return self.binance_account().get('totalWalletBalance')
 
     def symbol_price(self, pair: str = None):
         '''
@@ -133,3 +134,11 @@ class Future_Binancebot:
                 'Volume',
             ]
         ]
+
+    def f_order(self, __order__):
+
+        '''
+        Abre una orden
+        '''
+        params = __order__       
+        self.binance_client.new_order(**params)
