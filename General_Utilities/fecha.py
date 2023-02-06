@@ -2,6 +2,10 @@ from datetime import datetime, timedelta, date
 
 
 def BatchID(__dt__):
+	'''
+	Toma una dato datetime y lo convierte en una cadena arrojando
+	la fecha en formato yymmdd.
+	'''
 	__fecha__ = datetime.strftime(
 		__dt__
 		, '%Y%m%d'
@@ -58,3 +62,19 @@ def date_fechaID(__strdt__):
 		).date()
 
 	return(__fecha__)
+
+def f_timestamp(__timestamp__):
+	'''
+	convert the timestamp to a datetime object in the local timezone
+	'''
+	dt_object = datetime.fromtimestamp(__timestamp__)
+
+	return dt_object
+
+def t_timestamp(__dt__):
+	'''
+	convert the datetime to a timestamp object in the local timezone
+	'''
+	dt_object = __dt__.timestamp()
+
+	return dt_object
