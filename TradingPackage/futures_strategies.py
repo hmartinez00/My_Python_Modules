@@ -64,8 +64,8 @@ class set_values:
             dt.strftime(
                 dt.now(), '%Y-%m-%d %H:%M:%S'
             ),
-            bot.symbol_price(), 
-            df.cci().iloc[-1],
+            round(bot.symbol_price(), 2), 
+            round(df.cci().iloc[-1],2),
         )
 
         if cci > 100:
