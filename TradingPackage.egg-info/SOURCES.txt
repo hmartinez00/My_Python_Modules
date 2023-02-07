@@ -1,6 +1,7 @@
 README.md
 setup.py
 TradingPackage/Bbinance.py
+TradingPackage/Binance_connect.py
 TradingPackage/Fbinance.py
 TradingPackage/Indicators.py
 TradingPackage/Special_Indicators.py
