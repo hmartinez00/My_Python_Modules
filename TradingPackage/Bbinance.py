@@ -2,7 +2,6 @@
 
 import json
 from binance.spot import Spot
-from binance.um_futures import UMFutures
 import pandas as pd
 import numpy as np
 from datetime import datetime as dt
