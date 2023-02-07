@@ -1,4 +1,5 @@
 import json
+from binance.spot import Spot
 from binance.um_futures import UMFutures
 from General_Utilities.control_rutas import setting_routes
 
@@ -16,7 +17,12 @@ class binance_client:
         self.key = 'api'
         self.__api_key__ = datos_json['API_KEY']
         self.__api_secret__ = datos_json['API_SECRET']
-    
-        B_connection = UMFutures(key=self.__api_key__, secret=self.__api_secret__)
-
+       
+    def spot(self):
+        B_connection = Spot(key=self.__api_key__, secret=self.__api_secret__)    
         return B_connection
+
+    def futures(self):
+        B_connection = UMFutures(key=self.__api_key__, secret=self.__api_secret__)
+        return B_connection
+
