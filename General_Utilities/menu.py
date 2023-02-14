@@ -3,13 +3,29 @@ from General_Utilities.option_list import option_list
 from General_Utilities.control_rutas import setting_routes
 
 
-def menu():
+def menu(
+		key: str,
+		sub_key: str
+	):
+
+	'''
+	Funcion para levantar menu automatico con las opciones configuradas en el archivo routes.json.
+
+	*parameters:
+		key: str. Clave de acceso a las opciones. Por defecto key deberia ser "exec".
+		sub_key: str. Si key == "sub_exec", se acceden a opciones de submenu.
+
+	'''
 
 	subprocess.run('cls', shell=True)
 
-	key = 'exec'
-	opciones = setting_routes(key)[0]
-	acciones = setting_routes(key)[1]
+	if key == 'exec':
+		opciones = setting_routes(key)[0]
+		acciones = setting_routes(key)[1]
+	elif key == 'sub_exec':
+		opciones = setting_routes(key)[sub_key]['opciones']
+		acciones = setting_routes(key)[sub_key]['acciones']
+
 	opciones.append("Salir")
 
 	opcion = option_list(opciones)

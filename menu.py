@@ -1,3 +1,8 @@
 from General_Utilities.menu import menu
 
-menu()
+key = 'exec'
+sub_key = ''
+menu(
+    key,
+    sub_key
+)
