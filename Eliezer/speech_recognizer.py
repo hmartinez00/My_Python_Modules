@@ -1,4 +1,4 @@
-# pip intall speechrecognition
+# pip install speechrecognition
 # Puede requerir previamente:
 # 
 # pip install pipwin
