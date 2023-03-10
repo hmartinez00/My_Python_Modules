@@ -13,7 +13,6 @@ ip_address1 = socket.gethostbyname(hostname)
 # ip external server
 # ip_address2 = socket.getaddrinfo(url, 80)
 
-
 # ip publica
 external_ip = urllib.request.urlopen(external).read().decode('utf8')
 
