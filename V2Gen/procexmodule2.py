@@ -524,7 +524,7 @@ def directories_builder(__CPLAN_extract__):
         datetime.strptime(__CPLAN_extract__['FirstOrbitTime'], 
         '%Y-%m-%dT%H:%M:%S'), '%Y%m%d'))
      
-    root = 'Plan Satelital ' + BatchID + '/'
+    root = 'src/Plan Satelital ' + BatchID + '/'
     satellite_Plan = root + 'VRSS-2'
     station_Plan = root + 'Station Plan'
 
