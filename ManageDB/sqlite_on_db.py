@@ -1,6 +1,7 @@
 import pandas as pd
 import sqlite3
 from sqlite3 import Error
+from General_Utilities.fecha import dttostr
 
 
 def create_connection(__db__):
@@ -114,7 +115,7 @@ def redef_tupla(__tupla__, index):
 	'''
 	Tomara las entradas de una tupla, y convertira la entrada especificada segun el valor del atributo "index" en una string con el formato arrojado por "FechaID".
 	'''
-	from General_Utilities.fecha import dttostr
+	# from General_Utilities.fecha import dttostr
 	N_tupla = []
 
 	for i in range(len(__tupla__)):
@@ -128,7 +129,7 @@ def redef_tupla(__tupla__, index):
 
 	return N_tupla
 
-def sqlite_Insertar_registro_masivo(__db__, __table__, __df__, __temp_ind__, __start_index__):
+def sqlite_Insertar_registro_masivo(__db__, __table__, __df__, __start_index__, __temp_ind__):
 	'''
 	Inserta masivamente los datos de un dataframe, convirtiendo los datos de tipo datetime a string de la columna de indice __temp_ind__.
 	'''

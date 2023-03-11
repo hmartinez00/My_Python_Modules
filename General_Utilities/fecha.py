@@ -8,7 +8,7 @@ def dttostr(__dt__):
 	'''
 	__fecha__ = datetime.strftime(
 		__dt__
-		, '%Y-%m-%d %H:%M:$S'
+		, '%Y-%m-%d %H:%M:%S'
 	)
 	
 	return(__fecha__)
