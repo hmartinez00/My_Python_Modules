@@ -2,6 +2,7 @@ README.md
 setup.py
 ManageDB/__init__.py
 ManageDB/mysql_on_db.py
+ManageDB/mysql_to_sqlite.py
 ManageDB/sqlite_on_db.py
 ManageDB.egg-info/PKG-INFO
 ManageDB.egg-info/SOURCES.txt
