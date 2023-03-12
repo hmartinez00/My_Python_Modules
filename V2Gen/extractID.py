@@ -20,7 +20,7 @@ from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement, Comment
 from xml.dom import minidom
 
-from on_db import *
+from ManageDB.sqlite_on_db import sqlite_Insertar_registro_masivo
 # ---------------------------------------------------------------------
 
 
@@ -67,9 +67,7 @@ def IDUpdate(__fecha__):
     S_base_datos = 'vrss_operation_and_managment_subsystem'
     S_tabla = '`control_misiones_id_control_process`'
 
-    sub_directorio = 'Plan Satelital ' + str(__fecha__) + '/'
-#     os.chdir('..')
-#     os.chdir('backup/PMS/' + sub_directorio)
+    sub_directorio = 'src/Plan Satelital ' + str(__fecha__) + '/'
     os.chdir(sub_directorio)
     directorio = os.getcwd()
 
@@ -110,6 +108,15 @@ def IDUpdate(__fecha__):
     df['MessageCreateTime'] = epoch_format
     df['MessageCreateTime'] = pd.to_datetime(df['MessageCreateTime'])
 
-    Insertar_registro_masivo(df, S_base_datos, S_tabla)
+    # Insertar_registro_masivo(df, S_base_datos, S_tabla)
+    pregunta = input('Desea actualizar la tabla de procesos? (S/N): ')
+
+    if pregunta == 's' or pregunta == 'S':
+        try:
+            sqlite_Insertar_registro_masivo(S_base_datos, S_tabla, df, 0, 4)
+        except:
+            print('No se actualizo la tabla!')
+
+    return df
      
 # ---------------------------------------------------------------------
