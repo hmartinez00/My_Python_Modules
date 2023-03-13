@@ -136,7 +136,7 @@ def sqlite_Insertar_registro_masivo(__db__, __table__, __df__, __start_index__, 
 	for i in range(len(__df__)):
 		tupla = tuple(__df__.iloc[i])[__start_index__:]
 		rows = redef_tupla(tupla, __temp_ind__)
-		print(rows)
+		# print(rows)
 		avance = (i / len(__df__)) * 100
 		print(avance, end='\r')
 		insert(__db__, __table__, rows)
