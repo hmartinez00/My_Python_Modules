@@ -13,14 +13,8 @@
 # ---------------------------------------------------------------------
 import os
 import pandas as pd
-from datetime import datetime, timedelta
+from datetime import datetime
 import xml.etree.ElementTree as ET
-
-from xml.etree import ElementTree
-from xml.etree.ElementTree import Element, SubElement, Comment
-from xml.dom import minidom
-
-from ManageDB.sqlite_on_db import sqlite_Insertar_registro_masivo
 # ---------------------------------------------------------------------
 
 
@@ -64,8 +58,8 @@ def extractid(__var_archivo__):
 # ---------------------------------------------------------------------
 def IDUpdate(__fecha__):
 
-    S_base_datos = 'vrss_operation_and_managment_subsystem'
-    S_tabla = '`control_misiones_id_control_process`'
+    # S_base_datos = 'vrss_operation_and_managment_subsystem'
+    # S_tabla = '`control_misiones_id_control_process`'
 
     sub_directorio = 'src/Plan Satelital ' + str(__fecha__) + '/'
     os.chdir(sub_directorio)
@@ -107,15 +101,6 @@ def IDUpdate(__fecha__):
 
     df['MessageCreateTime'] = epoch_format
     df['MessageCreateTime'] = pd.to_datetime(df['MessageCreateTime'])
-
-    # Insertar_registro_masivo(df, S_base_datos, S_tabla)
-    pregunta = input('Desea actualizar la tabla de procesos? (S/N): ')
-
-    if pregunta == 's' or pregunta == 'S':
-        try:
-            sqlite_Insertar_registro_masivo(S_base_datos, S_tabla, df, 0, 4)
-        except:
-            print('No se actualizo la tabla!')
 
     return df
      
