@@ -1,6 +1,18 @@
 from datetime import datetime, timedelta, date
 
 
+def dttostr(__dt__):
+	'''
+	Toma una dato datetime y lo convierte en una cadena arrojando
+	la fecha en formato yymmdd.
+	'''
+	__fecha__ = datetime.strftime(
+		__dt__
+		, '%Y-%m-%d %H:%M:%S'
+	)
+	
+	return(__fecha__)
+
 def BatchID(__dt__):
 	'''
 	Toma una dato datetime y lo convierte en una cadena arrojando
