@@ -17,7 +17,8 @@ def menu(
 
 	'''
 
-	subprocess.run('cls', shell=True)
+	# subprocess.run('cls', shell=True)
+	subprocess.run('clear', shell=True)
 
 	if key == 'exec':
 		opciones = setting_routes(key)[0]
