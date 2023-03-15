@@ -2,6 +2,8 @@ README.md
 setup.py
 Eliezer/Command_builder.py
 Eliezer/__init__.py
+Eliezer/connect.py
+Eliezer/net_utilities.py
 Eliezer/speech_recognizer.py
 Eliezer/voice.py
 Eliezer.egg-info/PKG-INFO
