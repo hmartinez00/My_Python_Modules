@@ -56,12 +56,12 @@ def extractid(__var_archivo__):
 # ---------------------------------------------------------------------
 # Actualizacion de tabla de control de procesos
 # ---------------------------------------------------------------------
-def IDUpdate(__fecha__):
+def IDUpdate(__fecha__, __container__):
 
     # S_base_datos = 'vrss_operation_and_managment_subsystem'
     # S_tabla = '`control_misiones_id_control_process`'
 
-    sub_directorio = 'src/Plan Satelital ' + str(__fecha__) + '/'
+    sub_directorio = __container__ + 'Plan Satelital ' + str(__fecha__) + '/'
     os.chdir(sub_directorio)
     directorio = os.getcwd()
 

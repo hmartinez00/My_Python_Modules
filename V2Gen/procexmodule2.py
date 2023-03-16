@@ -513,7 +513,7 @@ def RECEIVETASK_builder(__CPLAN_extract__, __RecPass__):
     return __RECEIVETASK_values__
 
 
-def directories_builder(__CPLAN_extract__):
+def directories_builder(__CPLAN_extract__, __container__):
 
     __directories__ = {}
 
@@ -521,7 +521,7 @@ def directories_builder(__CPLAN_extract__):
         datetime.strptime(__CPLAN_extract__['FirstOrbitTime'], 
         '%Y-%m-%dT%H:%M:%S'), '%Y%m%d'))
      
-    root = 'src/Plan Satelital ' + BatchID + '/'
+    root = __container__ + 'Plan Satelital ' + BatchID + '/'
     satellite_Plan = root + 'VRSS-2'
     station_Plan = root + 'Station Plan'
 
@@ -645,9 +645,9 @@ def XML_RECEIVETASK_Generator(__RECEIVETASK_dict__, __ParameterFileCount__):
     f.close()
 
 
-def files_organizer(__CPLAN_extract__, __RecPass__):
-    injection_files_path = directories_builder(__CPLAN_extract__)['satellite_Plan']
-    reception_files_path = directories_builder(__CPLAN_extract__)['station_Plan']
+def files_organizer(__CPLAN_extract__, __RecPass__, __container__):
+    injection_files_path = directories_builder(__CPLAN_extract__, __container__)['satellite_Plan']
+    reception_files_path = directories_builder(__CPLAN_extract__, __container__)['station_Plan']
 
     s_plan_files = []
     s_plan_files.append(__CPLAN_extract__['PlanFileName'])

@@ -1,10 +1,7 @@
 from datetime import datetime, timedelta
-import xml.etree.ElementTree as ET
-from xml.etree import ElementTree
-from xml.etree.ElementTree import Element, SubElement, Comment
-from xml.dom import minidom
-
+from xml.etree.ElementTree import Element, SubElement
 from V2Gen.prettify import prettify
+
 
 def BatchID_missions_table(__missions__, __BatchID__):
     __s_dia__ = timedelta(days=1)
