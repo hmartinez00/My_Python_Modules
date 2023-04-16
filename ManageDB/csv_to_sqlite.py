@@ -8,7 +8,7 @@ tabla = '`guardias`'
 
 file = r'C:\Users\admin\Documents\distribucion_de_guardias_ut_2023_2024.csv'
 df = pd.read_csv(file)
-df['Id'] = [i for i in range(len(df))]
+# df['Id'] = [i for i in range(len(df))]
 df.set_index('Id',inplace=True)
 df.index.name = None
 print(df)
