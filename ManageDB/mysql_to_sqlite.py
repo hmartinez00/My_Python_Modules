@@ -3,7 +3,7 @@ from ManageDB.sqlite_on_db import create_connection, drop_table, redef_tupla, cr
 
 
 base_datos = 'vrss_operation_and_managment_subsystem'
-tabla = '`control_misiones_id_control_process`'
+tabla = '`distribucion_de_guardias_ut_2023_2024`'
 
 # Aca extraemos la tabla y la presentamos en un dataframe.
 df = mysql_extract_table_df(base_datos, tabla)

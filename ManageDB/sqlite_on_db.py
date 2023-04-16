@@ -140,3 +140,15 @@ def sqlite_Insertar_registro_masivo(__db__, __table__, __df__, __start_index__, 
 		avance = (i / len(__df__)) * 100
 		print(avance, end='\r')
 		insert(__db__, __table__, rows)
+
+def sqlite_Insertar_df_masivo(__db__, __table__, __df__):
+	'''
+	Inserta masivamente los datos de un dataframe, convirtiendo los datos de tipo datetime a string de la columna de indice __temp_ind__.
+	'''
+	for i in range(len(__df__)):
+		tupla = tuple(__df__.iloc[i])
+		rows = tupla
+		# print(rows)
+		avance = (i / len(__df__)) * 100
+		print(avance, end='\r')
+		insert(__db__, __table__, rows)

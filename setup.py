@@ -1,11 +1,11 @@
 from setuptools import setup
 
 setup(
-    name='V2Gen',
-    version='0.1',
-    description='Paquete ligero de modulos para generacion VRSS',
+    name='ManageDB',
+    version='0.2',
+    description='Herramientas para gestion de Bases de Datos SQL.',
     author='Hector Martinez',
     author_email='hectoralonzomartinez00@gmail.com',
     url='',
-    packages=['V2Gen']
+    packages=['ManageDB']
 )
