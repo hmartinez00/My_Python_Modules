@@ -3,3 +3,4 @@ pip install requests
 pip install pywhatkit
 pip install binance-connector
 pip install binance-futures-connector
+pip install mplfinance
