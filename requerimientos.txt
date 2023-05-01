@@ -4,3 +4,5 @@ pip install pywhatkit
 pip install binance-connector
 pip install binance-futures-connector
 pip install mplfinance
+pip install Django
+pip install pysqlite3
