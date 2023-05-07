@@ -4,13 +4,15 @@
             "Crear paquete vacio",
             "Actualizar un paquete",
             "Hacer commit automatico",
-            "Actualizar todos los paquetes"
+            "Actualizar todos los paquetes",
+            "Crear menu"
         ],
         [
             "Package_update/builder.py",
             "Package_update/single_updater.py",
             "Package_update/git_update.py",
-            "Package_update/full_updater.py"
+            "Package_update/full_updater.py",
+            "Package_update/main_creator.py"
         ]
     ]
 }
