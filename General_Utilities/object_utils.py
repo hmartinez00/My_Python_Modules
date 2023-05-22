@@ -4,11 +4,9 @@ import inspect
 
 def request(cls, endpoint: str, parameters: dict = None):
 	'''
-	Metodo de control de errores.
-	
-	Envia la peticion del endpoint (metodos especificos de la API como time, account, ticker_price, etc...), y devuelve la respuesta, ya se sin parametros o con parametros y en caso de que ocurra un error, controla el error.
+	Permite aplicar un metodo a un objeto de clase usando el nombre del metodo en formato str. Esta basada en basada en getattr(), y devuelve la respuesta, ya se sin parametros o con parametros y en caso de que ocurra un error, controla el error.
 
-	En caso de necesitarse parametros para endpint, o metodos propios de Api, se deben introducir mediante un diccionario. Lo veremos con los objetos llamados "params" en varios de los metodos de la clase.
+	En caso de necesitarse parametros para metodo, se deben introducir mediante un diccionario.
 	'''
 	
 	try:
