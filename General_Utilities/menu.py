@@ -1,6 +1,32 @@
 import subprocess
+from General_Utilities.object_utils import request, get_method_tags
 from General_Utilities.option_list import option_list
 from General_Utilities.control_rutas import setting_routes
+
+
+def menu_class(cls):
+
+	while True:
+
+		subprocess.run('clear', shell=True)
+		tags = get_method_tags(cls)
+		opciones, acciones = [i[1] for i in tags], [i[0] for i in tags]
+
+		opciones.append("Salir")
+		opcion = option_list(opciones)
+
+		for i in range(len(opciones)):
+			if opcion == opciones[i]:
+				j = i
+
+		if j < len(opciones) - 1:
+			endpoint = acciones[j]
+			request(cls, endpoint)
+		elif j == len(opciones) - 1:
+			print('Adios!')
+			break
+		else:
+			print('\nOpcion Invalida! Repita la seleccion.\n')
 
 
 def menu(
