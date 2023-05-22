@@ -41,8 +41,6 @@ def get_method_tags(cls):
 
 def menu_class(cls):
 
-	# out = []
-
 	while True:
 
 		subprocess.run('clear', shell=True)
@@ -58,15 +56,12 @@ def menu_class(cls):
 
 		if j < len(opciones) - 1:
 			endpoint = acciones[j]
-			# out.append(endpoint)
 			request(cls, endpoint)
 		elif j == len(opciones) - 1:
 			print('Adios!')
 			break
 		else:
-			print('\nOpcion Invalida! Repita la eleccion.\n')
-	
-	# return out
+			print('\nOpcion Invalida! Repita la seleccion.\n')
 
 
 def menu(
