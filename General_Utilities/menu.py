@@ -43,28 +43,31 @@ def menu(
 
 	'''
 
-	# subprocess.run('cls', shell=True)
-	subprocess.run('clear', shell=True)
+	while True:
 
-	if key == 'exec':
-		opciones = setting_routes(key)[0]
-		acciones = setting_routes(key)[1]
-	elif key == 'sub_exec':
-		opciones = setting_routes(key)[sub_key]['opciones']
-		acciones = setting_routes(key)[sub_key]['acciones']
+		# subprocess.run('cls', shell=True)
+		subprocess.run('clear', shell=True)
 
-	opciones.append("Salir")
+		if key == 'exec':
+			opciones = setting_routes(key)[0]
+			acciones = setting_routes(key)[1]
+		elif key == 'sub_exec':
+			opciones = setting_routes(key)[sub_key]['opciones']
+			acciones = setting_routes(key)[sub_key]['acciones']
 
-	opcion = option_list(opciones)
+		opciones.append("Salir")
 
-	for i in range(len(opciones)):
-		if opcion == opciones[i]:
-			j = i
+		opcion = option_list(opciones)
 
-	if j < len(opciones) - 1:
-		exec(open(acciones[j]).read())
-	elif j == len(opciones) - 1:
-		print('Adios!')
-	else:
-		print('\nOpcion Invalida! Repita la eleccion.\n')
-		exec(open("menu.py").read())
+		for i in range(len(opciones)):
+			if opcion == opciones[i]:
+				j = i
+
+		if j < len(opciones) - 1:
+			exec(open(acciones[j]).read())
+		elif j == len(opciones) - 1:
+			print('Adios!')
+			break
+		else:
+			print('\nOpcion Invalida! Repita la eleccion.\n')
+			# exec(open("menu.py").read())
