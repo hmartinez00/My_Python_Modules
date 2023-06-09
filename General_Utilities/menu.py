@@ -22,11 +22,15 @@ def menu_class(cls):
 		if j < len(opciones) - 1:
 			endpoint = acciones[j]
 			request(cls, endpoint)
+
 		elif j == len(opciones) - 1:
 			print('Adios!')
 			break
 		else:
 			print('\nOpcion Invalida! Repita la seleccion.\n')
+
+		input('Presione una tecla para continuar: ')
+
 
 
 def menu(
@@ -71,3 +75,5 @@ def menu(
 		else:
 			print('\nOpcion Invalida! Repita la eleccion.\n')
 			# exec(open("menu.py").read())
+		
+		input('Presione una tecla para continuar: ')
