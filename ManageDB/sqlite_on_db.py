@@ -75,6 +75,29 @@ def selectall(__db__, __table__):
 	df = pd.DataFrame(__dict__)
 	df = df.set_index('Id')
 	return df
+
+def selectall_id(__db__, __table__, id=None):
+	conn = sqlite3.connect(__db__)
+	sql="SELECT * FROM " + __table__
+	cursor=conn.execute(sql)	
+	cabeceras = get_column_names(__db__, __table__)
+	capturador=[]
+	for fila in cursor:
+		capturador.append(fila)
+	conn.close()
+	__dict__ = {}
+
+	for i in range(len(cabeceras)):
+		j_list = []
+		for j in range(len(capturador)):
+			j_list.append(capturador[j][i])
+		__dict__[cabeceras[i]] = j_list		
+
+	df = pd.DataFrame(__dict__)
+	if id==None:
+		id='Id'
+	df = df.set_index(id)
+	return df
 	
 def selectone(__db__, __table__, __condition__):
 	con=sqlite3.connect(__db__)

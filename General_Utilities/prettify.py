@@ -8,8 +8,8 @@ import unicodedata
 
 def remove_accents(value):
     normalized_value = unicodedata.normalize('NFKD', value)
-    ascii_value = normalized_value.encode('ASCII', 'ignore').decode('utf-8')
-    return ascii_value
+    without_accents = ''.join(c for c in normalized_value if not unicodedata.combining(c))
+    return without_accents
 
 
 def prettify(__elem__):
