@@ -16,6 +16,36 @@ def create_connection(__db__):
         if conn:
             conn.close()
 
+def show_tables(__db__):
+	'''
+	Muestra todas las tablas de la db especificada.
+	'''
+
+	# Conectarse a la base de datos
+	conn = sqlite3.connect(__db__)
+
+	# Crear un cursor
+	cursor = conn.cursor()
+
+	# Consulta SQL para obtener los nombres de las tablas
+	query = "SELECT name FROM sqlite_master WHERE type='table';"
+
+	# Ejecutar la consulta
+	cursor.execute(query)
+
+	# Obtener los resultados
+	tables = cursor.fetchall()
+
+	# # Imprimir los nombres de las tablas
+	# for table in tables:
+	# 	print(table[0])
+	tables = [table[0] for table in tables]
+
+	# Cerrar la conexión
+	conn.close()
+
+	return tables
+
 def drop_table(__db__, __table__):
 	conn =  sqlite3.connect(__db__)
 	cursor = conn.cursor()
