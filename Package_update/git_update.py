@@ -14,7 +14,8 @@ from Pku_module.Package_update_module import listar_paquetes
 #     pregunta2 = input('Desea actualizar un proyecto? (S/N): ')
 
 #     if pregunta2 == 's' or pregunta2 == 'S':
-os.chdir('..')
-opciones = os.listdir()
-project = option_list(opciones)
-auto_commit(project)
+# os.chdir('..')
+# opciones = os.listdir()
+# project = option_list(opciones)
+# auto_commit(project)
+auto_commit()

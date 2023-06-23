@@ -66,18 +66,27 @@ def actualizar_paquetes(__dir_dist, __project):
         print('El paquete no fue encontrado!')
 
 
-def auto_commit(__project):
+def get_modified_files():
+    output = subprocess.check_output(['git', 'status', '-s']).decode('utf-8').strip()
+    lines = output.split('\n')
+    files = [line.split()[1] for line in lines]
+    return files
+
+
+def auto_commit():
 
     ahora = dt.now()
 
-    rutes = []
-    for i in list_files(__project):
-        if '.git' in i:
-            continue
-        else:
-            rutes.append(i)
+    rutes = get_modified_files()
+
+    # rutes = []
+    # for i in list_files(__project):
+    #     if '.git' in i:
+    #         continue
+    #     else:
+    #         rutes.append(i)
     
-    rutes.append('.gitignore')
+    # rutes.append('.gitignore')
 
 
     total_add = 'git add '
