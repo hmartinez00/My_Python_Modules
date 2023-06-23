@@ -103,3 +103,16 @@ def auto_commit():
 
     for i in shell_order:
         subprocess.run(i, shell=True)
+
+
+    quest = input('Desea enviar a GitHub? (S/N)')
+
+    while True:
+        if quest == 's' or quest == 'S':
+            push_command = 'git push origin main'
+            subprocess.run(push_command, shell=True)
+            break
+        elif quest == 'n' or quest == 'N':
+            break
+        else:
+            print('Opcion invalida!')
