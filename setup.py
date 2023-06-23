@@ -1,11 +1,11 @@
 from setuptools import setup
 
 setup(
-    name='Pku_module',
-    version='0.3',
-    description='Utilidades para actualizacion de modulos y paquetes.',
+    name='ManageDB',
+    version='0.2',
+    description='Herramientas para gestion de Bases de Datos SQL.',
     author='Hector Martinez',
     author_email='hectoralonzomartinez00@gmail.com',
     url='',
-    packages=['Pku_module']
+    packages=['ManageDB']
 )
