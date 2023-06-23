@@ -105,7 +105,7 @@ def auto_commit():
         subprocess.run(i, shell=True)
 
 
-    quest = input('Desea enviar a GitHub? (S/N)')
+    quest = input('Desea enviar a GitHub? (S/N): ')
 
     while True:
         if quest == 's' or quest == 'S':
