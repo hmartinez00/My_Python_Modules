@@ -1,11 +1,11 @@
 from setuptools import setup
 
 setup(
-    name='Pku_module',
-    version='0.3',
-    description='Utilidades para actualizacion de modulos y paquetes.',
+    name='V2Gen',
+    version='0.1',
+    description='Paquete ligero de modulos para generacion VRSS',
     author='Hector Martinez',
     author_email='hectoralonzomartinez00@gmail.com',
     url='',
-    packages=['Pku_module']
+    packages=['V2Gen']
 )
