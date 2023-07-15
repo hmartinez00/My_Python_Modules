@@ -7,6 +7,7 @@ def sys_clean():
         'C:/Windows/Prefetch',
         'C:/Windows/Temp',
         'C:/Users/admin/AppData/Local/Temp',
+        'C:/Users/Hector/AppData/Local/Temp',
     ]
 
     def borrar_contenido_directorio(ruta_directorio):
