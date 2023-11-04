@@ -6,17 +6,26 @@ import pandas as pd
 import numpy as np
 from datetime import datetime as dt
 from General_Utilities.control_rutas import setting_routes
+from ManageDB.mysql_on_db import mysql_extract_table_df
 
 
 class Future_Binancebot:
 
-    key = 'api'
-    ruta_archivo_json = setting_routes(key)[0]
-    with open(ruta_archivo_json) as archivo_json:
-        datos_json = json.load(archivo_json)
+    # key = 'api'
+    # ruta_archivo_json = setting_routes(key)[0]
+    # with open(ruta_archivo_json) as archivo_json:
+    #     datos_json = json.load(archivo_json)
 
-    __api_key = datos_json['API_KEY']
-    __api_secret = datos_json['API_SECRET']
+    # __api_key = datos_json['API_KEY']
+    # __api_secret = datos_json['API_SECRET']
+
+    base_datos = 'trades'
+    tabla = 'claves'
+    data = mysql_extract_table_df(base_datos, tabla)
+    __api_key = data.iloc[1][2]
+    __api_secret = data.iloc[1][3]
+
+    
     binance_client = UMFutures(key=__api_key, secret=__api_secret)
 
     def __init__(
