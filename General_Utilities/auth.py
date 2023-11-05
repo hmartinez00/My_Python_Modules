@@ -8,8 +8,13 @@ class Auth():
         self.base_datos = 'trades'
         self.tabla = 'claves'
 
-    def auth(self, __i__):
+    def df_auth(self, __i__):
         data = mysql_extract_table_df(self.base_datos, self.tabla)
         info = data[data['field1'] == __i__]
+
+        return info
+
+    def auth(self, __i__):
+        info = self.df_auth(__i__).values.tolist()
 
         return info
