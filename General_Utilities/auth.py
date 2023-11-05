@@ -10,6 +10,6 @@ class Auth():
 
     def auth(self, __i__):
         data = mysql_extract_table_df(self.base_datos, self.tabla)
-        info = data.iloc[__i__]
+        info = data[data['field1'] == __i__]
 
         return info
