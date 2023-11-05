@@ -15,6 +15,6 @@ class Auth():
         return info
 
     def auth(self, __i__):
-        info = self.df_auth(__i__).values.tolist()
+        info = self.df_auth(__i__).values.tolist()[0]
 
         return info
