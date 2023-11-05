@@ -1,12 +1,13 @@
 # Author: Ronny Portillo
 
 import json
+from General_Utilities.control_rutas import setting_routes
+from ManageDB.mysql_on_db import mysql_extract_table_df
 from binance.um_futures import UMFutures
 import pandas as pd
 import numpy as np
 from datetime import datetime as dt
-from General_Utilities.control_rutas import setting_routes
-from ManageDB.mysql_on_db import mysql_extract_table_df
+from General_Utilities.auth import Auth
 
 
 class Future_Binancebot:
@@ -19,11 +20,15 @@ class Future_Binancebot:
     # __api_key = datos_json['API_KEY']
     # __api_secret = datos_json['API_SECRET']
 
-    base_datos = 'trades'
-    tabla = 'claves'
-    data = mysql_extract_table_df(base_datos, tabla)
-    __api_key = data.iloc[1][2]
-    __api_secret = data.iloc[1][3]
+    # base_datos = 'trades'
+    # tabla = 'claves'
+    # data = mysql_extract_table_df(base_datos, tabla)
+    # __api_key = data.iloc[1][2]
+    # __api_secret = data.iloc[1][3]
+
+    data = Auth().auth('binance')
+    __api_key = data[2]
+    __api_secret = data[3]
 
     
     binance_client = UMFutures(key=__api_key, secret=__api_secret)
