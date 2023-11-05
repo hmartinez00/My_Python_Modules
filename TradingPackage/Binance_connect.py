@@ -3,6 +3,7 @@ from binance.spot import Spot
 from binance.um_futures import UMFutures
 from General_Utilities.control_rutas import setting_routes
 from ManageDB.mysql_on_db import mysql_extract_table_df
+from General_Utilities.auth import Auth
 
 
 class binance_client:
@@ -18,11 +19,15 @@ class binance_client:
         # self.__api_key__ = datos_json['API_KEY']
         # self.__api_secret__ = datos_json['API_SECRET']
 
-        base_datos = 'trades'
-        tabla = 'claves'
-        data = mysql_extract_table_df(base_datos, tabla)
-        self.__api_key__ = data.iloc[1][2]
-        self.__api_secret__ = data.iloc[1][3]
+        # base_datos = 'trades'
+        # tabla = 'claves'
+        # data = mysql_extract_table_df(base_datos, tabla)
+        # self.__api_key__ = data.iloc[1][2]
+        # self.__api_secret__ = data.iloc[1][3]
+        
+        data = Auth().auth('binance')
+        self.__api_key__ = data[2]
+        self.__api_secret__ = data[3]
 
     def spot(self):
         B_connection = Spot(key=self.__api_key__, secret=self.__api_secret__)    
