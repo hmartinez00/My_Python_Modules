@@ -8,7 +8,11 @@ def menu_class(cls):
 
 	while True:
 
-		subprocess.run('clear', shell=True)
+		try:
+			subprocess.run('clear', shell=True)
+		except:
+			subprocess.run('cls', shell=True)
+        
 		tags = get_method_tags(cls)
 		opciones, acciones = [i[1] for i in tags], [i[0] for i in tags]
 
