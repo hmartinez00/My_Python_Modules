@@ -1,11 +1,11 @@
 from setuptools import setup
 
 setup(
-    name='General_Utilities',
+    name='Eliezer',
     version='0.1',
-    description='Subrutinas generales.',
+    description='Asistente dirigido por reconocimiento de voz.',
     author='Hector Martinez',
     author_email='hectoralonzomartinez00@gmail.com',
     url='',
-    packages=['General_Utilities']
+    packages=['Eliezer']
 )

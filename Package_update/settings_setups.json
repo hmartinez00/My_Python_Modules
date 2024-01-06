@@ -86,5 +86,16 @@
         "packages": [
             "V2Gen"
         ]
+    },
+    "": {
+        "name": "",
+        "version": "0.1",
+        "description": "",
+        "author": "Hector Martinez",
+        "author_email": "hectoralonzomartinez00@gmail.com",
+        "url": "",
+        "packages": [
+            ""
+        ]
     }
 }
