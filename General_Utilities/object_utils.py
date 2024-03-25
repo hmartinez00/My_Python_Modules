@@ -45,7 +45,7 @@ def get_mark_tags():
 	for line in source_lines:
 		mark = 'main_description: '
 		if mark in line:
-			description = line.replace(mark, '')
+			description = line.replace(mark, '').replace('# ', '').replace('\n', '')
 			tags.append(description)
-			
+
 	return tags
