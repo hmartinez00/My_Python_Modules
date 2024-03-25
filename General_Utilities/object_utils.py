@@ -33,3 +33,19 @@ def get_method_tags(cls):
 				description = match.group(1)
 				tags.append((name, description))
 	return tags
+
+def get_mark_tags():
+	
+	import sys
+	ruta_completa = sys.argv[0]
+	file = open(ruta_completa, 'r')
+	source_lines = file.readlines()
+	
+	tags = []
+	for line in source_lines:
+		mark = 'main_description: '
+		if mark in line:
+			description = line.replace(mark, '')
+			tags.append(description)
+			
+	return tags

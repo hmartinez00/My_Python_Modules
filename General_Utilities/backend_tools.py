@@ -25,60 +25,62 @@ class laravel_orders():
         self.base_path = setting_routes('dir')[0]
         self.dir_path = dir_path
         self.orders = {
-            'new'       : 'laravel new', 
              # Crea un nuevo proyecto de Laravel en un directorio específico.
-            'serve'     : 'php artisan serve', 
+            'new'       : 'laravel new', 
              # Inicia el servidor de desarrollo de Laravel.
-            'migrate'   : 'php artisan migrate', 
+            'serve'     : 'php artisan serve', 
              # Ejecuta las migraciones pendientes para actualizar la base de datos.
-            'rollback'  : 'php artisan migrate:rollback', 
+            'migrate'   : 'php artisan migrate', 
              # Revierte la última migración realizada.
-            'reset'     : 'php artisan migrate:reset', 
+            'rollback'  : 'php artisan migrate:rollback', 
              # Revierte todas las migraciones realizadas.
-            'refresh'   : 'php artisan migrate:refresh', 
+            'reset'     : 'php artisan migrate:reset', 
              # Revierte y vuelve a ejecutar todas las migraciones.
-            'status'    : 'php artisan migrate:status', 
+            'refresh'   : 'php artisan migrate:refresh', 
              # Muestra el estado actual de todas las migraciones.
-            'seed'      : 'php artisan db:seed', 
+            'status'    : 'php artisan migrate:status', 
              # Ejecuta los seeders registrados para poblar la base de datos.
-            'model'     : 'php artisan make:model', 
+            'seed'      : 'php artisan db:seed', 
              # Crea un nuevo modelo en la carpeta "app" de tu proyecto.
-            'migration' : 'php artisan make:migration', 
+            'model'     : 'php artisan make:model', 
              # Crea un nuevo archivo de migración en la carpeta "database/migrations".
-            'seeder'    : 'php artisan make:seeder', 
+            'migration' : 'php artisan make:migration', 
              # Crea un nuevo archivo de seeder en la carpeta "database/seeds".
-            'factory'   : 'php artisan make:factory', 
+            'seeder'    : 'php artisan make:seeder', 
              # Crea una nueva factory en la carpeta "database/factories".
-            'controller': 'php artisan make:controller', 
+            'factory'   : 'php artisan make:factory', 
              # Crea un nuevo controlador en la carpeta "app/Http/Controllers".
-            'resource'  : 'php artisan make:resource', 
+            'controller': 'php artisan make:controller', 
              # Crea una nueva clase de recurso en la carpeta "app/Http/Resources".
-            'request'   : 'php artisan make:request', 
+            'resource'  : 'php artisan make:resource', 
              # Crea una nueva clase de request en la carpeta "app/Http/Requests".
-            'middleware': 'php artisan make:middleware', 
+            'request'   : 'php artisan make:request', 
              # Crea un nuevo middleware.
-            'livewire_component': 'php artisan make:livewire', 
+            'middleware': 'php artisan make:middleware', 
              # Crea un nuevo compnente livewire.
-            'mail' : 'php artisan make:mail',
-            # Crea una clase para la generacion de mail.
-            'route'     : 'php artisan route:list', 
+            'livewire_component': 'php artisan make:livewire', 
+             # Crea una clase para la generacion de mail.
+            'mail'  : 'php artisan make:mail',
              # Muestra la lista actualizada de rutas del sistema".
-            'Auth_breeze_package'   : 'composer require laravel/breeze --dev',
+            'route' : 'php artisan route:list', 
              # Instalará el paquete breeze para gestionar autenticaciones.
-            'Auth_jetstream_package': 'composer require laravel/jetstream',
+            'Auth_breeze_package'   : 'composer require laravel/breeze --dev',
              # Instalará el paquete jetstream para gestionar autenticaciones.
-            'livewire'  : 'composer require livewire/livewire',
+            'Auth_jetstream_package': 'composer require laravel/jetstream',
              # Instalará el paquete livewire para renderizado parcial en el proyecto.
+            'livewire'  : 'composer require livewire/livewire',
+             # Instalará el paquete telegram-bot en el proyecto.
+            'telegram'  : 'composer require telegram-bot/api',
+             # Instalará el scafolding.
             'breeze_install'        : 'php artisan breeze:install',
              # Instalará el scafolding.
             'jetstream_install'     : 'php artisan jetstream:install',
-             # Instalará el scafolding.
-            'npm_install': 'npm install',
              # Instalará npm para vizualizacion del scafolding.
-            'npm_run_dev': 'npm run dev',
+            'npm_install': 'npm install',
              # Iniciara node para la adecuada ejecuacion de los frontales.
-            'storagelink': 'php artisan storage:link',
+            'npm_run_dev': 'npm run dev',
              # genera un link simbolico...
+            'storagelink': 'php artisan storage:link',
         }
 
         self.conn_project()
@@ -356,6 +358,12 @@ class laravel_orders():
         '''
         livewire_component_name = input('livewire component name: ')
         self.action('livewire_component', livewire_component_name)
+
+    def telegram(self):
+        '''
+        main_description: telegram.
+        '''
+        self.action('telegram')
 
     def mail(self):
         '''
