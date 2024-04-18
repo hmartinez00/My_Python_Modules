@@ -7,9 +7,11 @@ General_Utilities/cntrl_exit.py
 General_Utilities/control_rutas.py
 General_Utilities/fecha.py
 General_Utilities/menu.py
+General_Utilities/module_extractor.py
 General_Utilities/object_utils.py
 General_Utilities/option_list.py
 General_Utilities/prettify.py
+General_Utilities/sync_voice_over.py
 General_Utilities/sys_clean.py
 General_Utilities.egg-info/PKG-INFO
 General_Utilities.egg-info/SOURCES.txt
